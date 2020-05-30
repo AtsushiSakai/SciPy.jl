@@ -1,5 +1,19 @@
 module SciPy
 
-# Write your package code here.
+using PyCall
+
+export constants
+
+const scipy = PyNULL()
+const constants = PyNULL()
+
+
+function __init__()
+
+    copy!(scipy, pyimport_conda("scipy", "scipy"))
+    copy!(constants, pyimport("scipy.constants"))
+
+end
+
 
 end

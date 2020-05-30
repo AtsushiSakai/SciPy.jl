@@ -2,5 +2,5 @@ using SciPy
 using Test
 
 @testset "SciPy.jl" begin
-    # Write your tests here.
+    @test constants.golden == 1.618033988749895
 end

@@ -3,6 +3,9 @@ uuid = "ebc72ef8-9537-4fb0-b64e-ac76025fed2d"
 authors = ["Atsushi Sakai <asakai.amsl+github@gmail.com> and contributors"]
 version = "0.1.0"
 
+[deps]
+PyCall = "438e738f-606a-5dbb-bf0a-cddfbfd45ab0"
+
 [compat]
 julia = "1.4"
 
