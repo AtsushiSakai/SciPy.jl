@@ -10,7 +10,7 @@ const constants = PyNULL()
 
 function __init__()
 
-    copy!(scipy, pyimport_conda("scipy", "scipy"))
+    copy!(scipy, pyimport_conda("scipy", "scipy", "conda-forge"))
     copy!(constants, pyimport("scipy.constants"))
 
 end
