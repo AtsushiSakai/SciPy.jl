@@ -22,4 +22,11 @@ using Test
     @testset "constants" begin
         @test constants.golden == 1.618033988749895
     end
+
+    @testset "fft" begin
+        fft = SciPy.fft.fft(exp.(π/8 * collect(1:8)))
+        @test length(fft) == 8
+    end
+
+
 end

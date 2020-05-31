@@ -17,6 +17,10 @@ SciPy
 
 # Install
 
+The package is tested against, and being developed for, Julia 1.4 and above on Linux, macOS, and Windows.
+
+You can install this package with:
+
 ```jl
 using Pkg;Pkg.add("SciPy")
 ```
@@ -40,12 +44,20 @@ You can access each SciPy modules as belows:
 cluster
 ```
 
-
 ## scipy.constants
 
 ```@docs
 constants
 ```
+
+## scipy.fft
+
+```@docs
+fft
+```
+
+# Help
+
 
 # Index
 

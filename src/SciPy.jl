@@ -12,7 +12,7 @@ using PyCall
 using InteractiveUtils
 
 export print_configulations
-export cluster, constants
+export cluster, constants, fft
 
 const scipy = PyNULL()
 
@@ -95,6 +95,37 @@ const constants = PyNULL()
 
 
 """
+Scipy.fft module
+
+- [Discrete Fourier transforms (scipy.fft) Reference Guide](https://docs.scipy.org/doc/scipy/reference/fft.html)
+
+
+# Examples
+
+You can use FFT (Fast Fourier Transform) like:
+
+```julia-repl
+
+julia> SciPy.fft.fft(exp.(π/8 * collect(1:8)))
+8-element Array{Complex{Float64},1}:
+   68.17385416403044 - 0.0im
+   1.408601300061675 + 31.248171041435185im
+ -10.268363617931092 + 15.207165888808841im
+ -12.695027025520982 + 6.493878653648949im
+ -13.216494113330363 - 0.0im
+ -12.695027025520982 - 6.493878653648949im
+ -10.268363617931092 - 15.207165888808841im
+   1.408601300061675 - 31.248171041435185im
+
+
+
+```
+"""
+
+const fft = PyNULL()
+
+
+"""
 Module initialization function
 """
 function __init__()
@@ -102,6 +133,7 @@ function __init__()
     copy!(scipy, pyimport_conda("scipy", "scipy"))
     copy!(cluster, pyimport_conda("scipy.cluster", "scipy"))
     copy!(constants, pyimport_conda("scipy.constants", "scipy"))
+    copy!(fft, pyimport_conda("scipy.fft", "scipy"))
 
 end
 
