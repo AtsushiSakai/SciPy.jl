@@ -12,6 +12,16 @@ Julia interface for SciPy
 
 # Install
 
+# How to use
+
+You can access each SciPy modules as belows:
+
+## scipy.constants
+
+```@docs
+constants
+```
+
 # Index
 
 ```@index

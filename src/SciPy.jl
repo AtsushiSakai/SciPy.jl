@@ -20,6 +20,15 @@ const scipy = PyNULL()
 Scipy.constants module
 
 - [Constants (scipy.constants) Reference Guide](https://docs.scipy.org/doc/scipy/reference/constants.html)
+
+# Examples
+
+You can access each constants:
+
+```julia-repl
+julia> SciPy.constants.golden
+1.618033988749895
+```
 """
 const constants = PyNULL()
 
