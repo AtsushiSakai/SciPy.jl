@@ -12,7 +12,8 @@ using PyCall
 using InteractiveUtils
 
 export print_configulations
-export cluster, constants, fft, integrate
+export cluster, constants, fft, integrate, interpolate
+
 
 const scipy = PyNULL()
 
@@ -124,7 +125,7 @@ const fft = PyNULL()
 """
 Scipy.integrate module
 
-- [Integration and ODEs (scipy.integrate) Reference Guide](https://docs.scipy.org/doc/scipy-1.4.1/reference/integrate.html)
+- [Integration and ODEs (scipy.integrate) Reference Guide](https://docs.scipy.org/doc/scipy/reference/integrate.html)
 
 
 # Examples
@@ -142,6 +143,28 @@ julia> SciPy.integrate.quad(f, 0, 4)
 """
 const integrate = PyNULL()
 
+"""
+Scipy.interpolate module
+
+- [Interpolation (scipy.interpolate) Reference Guide](https://docs.scipy.org/doc/scipy/reference/interpolate.html)
+
+
+# Examples
+
+You can interpolate 1D data:
+
+```julia-repl
+julia> x = collect(0:10);
+julia> y = exp.(-x/3.0);
+julia> f = SciPy.interpolate.interp1d(x, y);
+julia> f(0.5)
+0-dimensional Array{Float64,0}:
+0.8582656552868946
+
+```
+"""
+const interpolate = PyNULL()
+
 
 """
 Module initialization function
@@ -153,6 +176,7 @@ function __init__()
     copy!(constants, pyimport_conda("scipy.constants", "scipy"))
     copy!(fft, pyimport_conda("scipy.fft", "scipy"))
     copy!(integrate, pyimport_conda("scipy.integrate", "scipy"))
+    copy!(interpolate, pyimport_conda("scipy.interpolate", "scipy"))
 
 end
 

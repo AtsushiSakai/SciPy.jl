@@ -28,5 +28,17 @@ using Test
         @test length(fft) == 8
     end
 
+    @testset "integrate" begin
+        f(x) = x^2
+        result = SciPy.integrate.quad(f, 0, 4)
+        @test result[1] == 21.333333333333336
+    end
+
+    @testset "interpolate" begin
+        x = collect(0:10)
+        y = exp.(-x/3.0)
+        f = SciPy.interpolate.interp1d(x, y)
+        @test f(0.5)[1] == 0.8582656552868946
+    end
 
 end
