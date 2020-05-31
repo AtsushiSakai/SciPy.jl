@@ -1,6 +1,10 @@
 """
 A Julia interface module for SciPy
 
+- [GitHub repository: AtsushiSakai/SciPy\.jl: Julia interface for SciPy](https://github.com/AtsushiSakai/SciPy.jl)
+- [Stable Doc](https://atsushisakai.github.io/SciPy.jl/stable)
+- [Dev Doc](https://atsushisakai.github.io/SciPy.jl/dev)
+
 """
 module SciPy
 
@@ -15,7 +19,7 @@ const scipy = PyNULL()
 """
 Scipy.constants module
 
-https://docs.scipy.org/doc/scipy/reference/constants.html
+- [Constants \(scipy\.constants\) Reference Guide](https://docs.scipy.org/doc/scipy/reference/constants.html)
 """
 const constants = PyNULL()
 
@@ -25,8 +29,8 @@ Module initialization function
 """
 function __init__()
 
-    copy!(scipy, pyimport_conda("scipy", "scipy", "conda-forge"))
-    copy!(constants, pyimport("scipy.constants"))
+    copy!(scipy, pyimport_conda("scipy", "scipy"))
+    copy!(constants, pyimport_conda("scipy.constants", "scipy"))
 
 end
 

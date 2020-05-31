@@ -10,10 +10,14 @@ CurrentModule = SciPy
 
 Julia interface for SciPy
 
-# index
+# Install
+
+# Index
 
 ```@index
 ```
+
+# API Reference
 
 ```@autodocs
 Modules = [SciPy]
