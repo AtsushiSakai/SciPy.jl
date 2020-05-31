@@ -12,7 +12,7 @@ using PyCall
 using InteractiveUtils
 
 export print_configulations
-export cluster, constants, fft
+export cluster, constants, fft, integrate
 
 const scipy = PyNULL()
 
@@ -93,7 +93,6 @@ julia> SciPy.constants.convert_temperature([-40, 40.0], "Celsius", "Kelvin")
 """
 const constants = PyNULL()
 
-
 """
 Scipy.fft module
 
@@ -102,7 +101,7 @@ Scipy.fft module
 
 # Examples
 
-You can use FFT (Fast Fourier Transform) like:
+You can use FFT (Fast Fourier Transform):
 
 ```julia-repl
 
@@ -117,12 +116,31 @@ julia> SciPy.fft.fft(exp.(π/8 * collect(1:8)))
  -10.268363617931092 - 15.207165888808841im
    1.408601300061675 - 31.248171041435185im
 
+```
+"""
+const fft = PyNULL()
 
+
+"""
+Scipy.integrate module
+
+- [Integration and ODEs (scipy.integrate) Reference Guide](https://docs.scipy.org/doc/scipy-1.4.1/reference/integrate.html)
+
+
+# Examples
+
+You can compute a definite integral:
+
+```julia-repl
+julia> f(x) = x^2
+f (generic function with 1 method)
+
+julia> SciPy.integrate.quad(f, 0, 4)
+(21.333333333333336, 2.368475785867001e-13)
 
 ```
 """
-
-const fft = PyNULL()
+const integrate = PyNULL()
 
 
 """
@@ -134,11 +152,12 @@ function __init__()
     copy!(cluster, pyimport_conda("scipy.cluster", "scipy"))
     copy!(constants, pyimport_conda("scipy.constants", "scipy"))
     copy!(fft, pyimport_conda("scipy.fft", "scipy"))
+    copy!(integrate, pyimport_conda("scipy.integrate", "scipy"))
 
 end
 
 """
-Print configulations like:
+Print configulations:
 - Julia version
 - Python version
 - Python path

@@ -8,11 +8,11 @@ CurrentModule = SciPy
 [![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://AtsushiSakai.github.io/SciPy.jl/stable)
 [![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://AtsushiSakai.github.io/SciPy.jl/dev)
 
-Julia interface for SciPy
+A Julia interface for [SciPy](https://www.scipy.org/scipylib/index.html) using [PyCall.jl](https://github.com/JuliaPy/PyCall.jl).
 
-```@docs
-SciPy
-```
+You can use many useful scientific functions of SciPy from Julia codes.
+
+You can know which kind of functions are available in the [SciPy Reference Guide](https://docs.scipy.org/doc/scipy/reference/).
 
 
 # Install
