@@ -10,11 +10,36 @@ CurrentModule = SciPy
 
 Julia interface for SciPy
 
+```@docs
+SciPy
+```
+
+
 # Install
+
+```jl
+using Pkg;Pkg.add("SciPy")
+```
+
+and then just import it with `using SciPy`.
+
+If you want use latest development code, clone this repo.
+
+Then, command this in Pkg mode:
+
+> Pkg> dev /path/to/module
+
 
 # How to use
 
 You can access each SciPy modules as belows:
+
+## scipy.cluster
+
+```@docs
+cluster
+```
+
 
 ## scipy.constants
 
