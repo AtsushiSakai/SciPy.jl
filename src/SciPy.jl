@@ -1,3 +1,7 @@
+"""
+A Julia interface module for SciPy
+
+"""
 module SciPy
 
 using PyCall
@@ -7,7 +11,14 @@ export print_configulations
 export constants
 
 const scipy = PyNULL()
+
+"""
+Scipy.constants module
+
+https://docs.scipy.org/doc/scipy/reference/constants.html
+"""
 const constants = PyNULL()
+
 
 """
 Module initialization function
