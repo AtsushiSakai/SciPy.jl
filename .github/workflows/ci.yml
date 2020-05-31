@@ -47,6 +47,12 @@ jobs:
     name: Documentation
     runs-on: macOS-latest
     steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: install scipy
+        run: pip install scipy
       - uses: julia-actions/setup-julia@v1
         with:
           version: '1'
