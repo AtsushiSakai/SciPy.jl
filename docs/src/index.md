@@ -95,6 +95,12 @@ odr
 optimize
 ```
 
+## scipy.signal
+
+```@docs
+signal
+```
+
 # Accessing docstring
 
 You can access docstring of a SciPy function:

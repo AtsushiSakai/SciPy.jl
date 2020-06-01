@@ -13,7 +13,7 @@ using InteractiveUtils
 
 export print_configulations
 export cluster, constants, fft, integrate, interpolate, io, linalg, ndimage, odr
-export optimize
+export optimize, signal
 
 
 const scipy = PyNULL()
@@ -301,6 +301,23 @@ Dict{Any,Any} with 8 entries:
 """
 const optimize = PyNULL()
 
+"""
+scipy.signal module
+
+- [Signal processing (scipy.signal) Reference Guide](https://docs.scipy.org/doc/scipy/reference/signal.html)
+
+
+# Examples
+
+You can compute the Kaiser parameter beta, given the attenuation a:
+
+```julia-repl
+julia> SciPy.signal.kaiser_beta(65)
+6.20426
+
+```
+"""
+const signal = PyNULL()
 
 
 """
@@ -319,6 +336,7 @@ function __init__()
     copy!(ndimage, pyimport_conda("scipy.ndimage", "scipy"))
     copy!(odr, pyimport_conda("scipy.odr", "scipy"))
     copy!(optimize, pyimport_conda("scipy.optimize", "scipy"))
+    copy!(signal, pyimport_conda("scipy.signal", "scipy"))
 
 end
 
