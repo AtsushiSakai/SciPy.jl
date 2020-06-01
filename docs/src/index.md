@@ -89,6 +89,11 @@ ndimage
 odr
 ```
 
+## scipy.optimize
+
+```@docs
+optimize
+```
 
 # Accessing docstring
 

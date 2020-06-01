@@ -13,12 +13,13 @@ using InteractiveUtils
 
 export print_configulations
 export cluster, constants, fft, integrate, interpolate, io, linalg, ndimage, odr
+export optimize
 
 
 const scipy = PyNULL()
 
 """
-Scipy.cluster module
+scipy.cluster module
 
 - [Clustering package (scipy.cluster) v1.4.1 Reference Guide](https://docs.scipy.org/doc/scipy/reference/cluster.html)
 
@@ -69,7 +70,7 @@ julia> SciPy.cluster.vq.kmeans(whitened, [whitened[1,:] whitened[3,:]] )
 const cluster = PyNULL()
 
 """
-Scipy.constants module
+scipy.constants module
 
 - [Constants (scipy.constants) Reference Guide](https://docs.scipy.org/doc/scipy/reference/constants.html)
 
@@ -95,7 +96,7 @@ julia> SciPy.constants.convert_temperature([-40, 40.0], "Celsius", "Kelvin")
 const constants = PyNULL()
 
 """
-Scipy.fft module
+scipy.fft module
 
 - [Discrete Fourier transforms (scipy.fft) Reference Guide](https://docs.scipy.org/doc/scipy/reference/fft.html)
 
@@ -123,7 +124,7 @@ const fft = PyNULL()
 
 
 """
-Scipy.integrate module
+scipy.integrate module
 
 - [Integration and ODEs (scipy.integrate) Reference Guide](https://docs.scipy.org/doc/scipy/reference/integrate.html)
 
@@ -144,7 +145,7 @@ julia> SciPy.integrate.quad(f, 0, 4)
 const integrate = PyNULL()
 
 """
-Scipy.interpolate module
+scipy.interpolate module
 
 - [Interpolation (scipy.interpolate) Reference Guide](https://docs.scipy.org/doc/scipy/reference/interpolate.html)
 
@@ -166,7 +167,7 @@ julia> f(0.5)
 const interpolate = PyNULL()
 
 """
-Scipy.io module
+scipy.io module
 
 - [Input and output (scipy.io) Reference Guide](https://docs.scipy.org/doc/scipy/reference/io.html)
 
@@ -187,7 +188,7 @@ julia> SciPy.io.savemat("sample_data.mat", mdic)
 const io = PyNULL()
 
 """
-Scipy.linalg module
+scipy.linalg module
 
 - [Linear algebra (scipy.linalg) Reference Guide](https://docs.scipy.org/doc/scipy/reference/linalg.html)
 
@@ -206,7 +207,7 @@ julia> SciPy.linalg.expm(zeros((2,2)))
 const linalg = PyNULL()
 
 """
-Scipy.ndimage module
+scipy.ndimage module
 
 - [Multi-dimensional image processing (scipy.ndimage) Reference Guide](https://docs.scipy.org/doc/scipy/reference/ndimage.html)
 
@@ -243,7 +244,7 @@ julia> SciPy.ndimage.convolve(a, k, mode="constant", cval=0.0)
 const ndimage = PyNULL()
 
 """
-Scipy.odr module
+scipy.odr module
 
 - [Orthogonal distance regression (scipy.odr) Reference Guide](https://docs.scipy.org/doc/scipy/reference/odr.html)
 
@@ -272,6 +273,35 @@ julia> println(output.beta)
 """
 const odr = PyNULL()
 
+"""
+scipy.optimize module
+
+- [Optimization and Root Finding (scipy.optimize) Reference Guide](https://docs.scipy.org/doc/scipy/reference/optimize.html)
+
+
+# Examples
+
+You can optimize the Rosen function:
+
+```julia-repl
+julia> x0 = [1.3, 0.7, 0.8, 1.9, 1.2];
+
+julia> res = SciPy.optimize.minimize(SciPy.optimize.rosen, x0, method="Nelder-Mead", tol=1e-6)
+Dict{Any,Any} with 8 entries:
+  "fun"           => 1.94206e-13
+  "nit"           => 295
+  "nfev"          => 494
+  "status"        => 0
+  "success"       => true
+  "message"       => "Optimization terminated successfully."
+  "x"             => [1.0, 1.0, 1.0, 1.0, 1.0]
+  "final_simplex" => ([1.0 1.0 … 1.0 1.0; 1.0 1.0 … 1.0 1.0; … ; 1.0 1.0 … 1.0 1.0; 1.0 1.0 … 1.0 1.0], [1…
+
+```
+"""
+const optimize = PyNULL()
+
+
 
 """
 Module initialization function
@@ -288,6 +318,7 @@ function __init__()
     copy!(linalg, pyimport_conda("scipy.linalg", "scipy"))
     copy!(ndimage, pyimport_conda("scipy.ndimage", "scipy"))
     copy!(odr, pyimport_conda("scipy.odr", "scipy"))
+    copy!(optimize, pyimport_conda("scipy.optimize", "scipy"))
 
 end
 
@@ -307,7 +338,7 @@ function print_configulations()
     @show PyCall.libpython
     @show PyCall.pyprogramname
     @show PyCall.conda
-    println("-- Scipy settings --")
+    println("-- SciPy settings --")
     @show scipy.__version__
     @show scipy.version.full_version
     @show scipy.version.git_revision
