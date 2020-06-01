@@ -83,6 +83,12 @@ linalg
 ndimage
 ```
 
+## scipy.odr
+
+```@docs
+odr
+```
+
 
 # Accessing docstring
 

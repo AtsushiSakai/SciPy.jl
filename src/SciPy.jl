@@ -12,7 +12,7 @@ using PyCall
 using InteractiveUtils
 
 export print_configulations
-export cluster, constants, fft, integrate, interpolate, io, linalg, ndimage
+export cluster, constants, fft, integrate, interpolate, io, linalg, ndimage, odr
 
 
 const scipy = PyNULL()
@@ -242,6 +242,36 @@ julia> SciPy.ndimage.convolve(a, k, mode="constant", cval=0.0)
 """
 const ndimage = PyNULL()
 
+"""
+Scipy.odr module
+
+- [Orthogonal distance regression (scipy.odr) Reference Guide](https://docs.scipy.org/doc/scipy/reference/odr.html)
+
+
+# Examples
+
+You can calculate orthogonal distance regression with an exponential model:
+
+```julia-repl
+julia> x = collect(0.0:5.0);
+
+julia> y = -10.0 .+ exp.(0.5*x);
+
+julia> data = SciPy.odr.Data(x, y)
+PyObject <scipy.odr.odrpack.Data object at 0x7fe5fda4ccc0>
+
+julia> data = SciPy.odr.Data(x, y);
+
+julia> odr_obj = SciPy.odr.ODR(data, SciPy.odr.exponential);
+
+julia> output = odr_obj.run();
+
+julia> println(output.beta)
+[-10.0, 0.5]
+```
+"""
+const odr = PyNULL()
+
 
 """
 Module initialization function
@@ -257,6 +287,7 @@ function __init__()
     copy!(io, pyimport_conda("scipy.io", "scipy"))
     copy!(linalg, pyimport_conda("scipy.linalg", "scipy"))
     copy!(ndimage, pyimport_conda("scipy.ndimage", "scipy"))
+    copy!(odr, pyimport_conda("scipy.odr", "scipy"))
 
 end
 
