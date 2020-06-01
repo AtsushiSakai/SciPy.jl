@@ -12,7 +12,7 @@ using PyCall
 using InteractiveUtils
 
 export print_configulations
-export cluster, constants, fft, integrate, interpolate, io, linalg
+export cluster, constants, fft, integrate, interpolate, io, linalg, ndimage
 
 
 const scipy = PyNULL()
@@ -205,6 +205,43 @@ julia> SciPy.linalg.expm(zeros((2,2)))
 """
 const linalg = PyNULL()
 
+"""
+Scipy.ndimage module
+
+- [Multi-dimensional image processing (scipy.ndimage) Reference Guide](https://docs.scipy.org/doc/scipy/reference/ndimage.html)
+
+
+# Examples
+
+You can compute a multidimensional convolution:
+
+```julia-repl
+julia> k = [[1 1 1];[1 1 0];[1 0 0]]
+3×3 Array{Int64,2}:
+ 1  1  1
+ 1  1  0
+ 1  0  0
+
+julia> a = [[1 2 0 0];
+            [5 3 0 4];
+            [0 0 0 7];
+            [9 3 0 0]]
+4×4 Array{Int64,2}:
+ 1  2  0  0
+ 5  3  0  4
+ 0  0  0  7
+ 9  3  0  0
+
+julia> SciPy.ndimage.convolve(a, k, mode="constant", cval=0.0)
+4×4 Array{Int64,2}:
+ 11  10   7   4
+ 10   3  11  11
+ 15  12  14   7
+ 12   3   7   0
+```
+"""
+const ndimage = PyNULL()
+
 
 """
 Module initialization function
@@ -219,6 +256,7 @@ function __init__()
     copy!(interpolate, pyimport_conda("scipy.interpolate", "scipy"))
     copy!(io, pyimport_conda("scipy.io", "scipy"))
     copy!(linalg, pyimport_conda("scipy.linalg", "scipy"))
+    copy!(ndimage, pyimport_conda("scipy.ndimage", "scipy"))
 
 end
 

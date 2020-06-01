@@ -77,6 +77,13 @@ io
 linalg
 ```
 
+## scipy.ndimage
+
+```@docs
+ndimage
+```
+
+
 # Accessing docstring
 
 You can access docstring of a SciPy function:
@@ -85,6 +92,7 @@ You can access docstring of a SciPy function:
 help?> SciPy.io.savemat
 
     Save a dictionary of names and arrays into a MATLAB-style .mat file.
+    ...
 ```
 
 # Index
