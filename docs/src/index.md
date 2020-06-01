@@ -59,6 +59,24 @@ constants
 fft
 ```
 
+## scipy.interpolate
+
+```@docs
+interpolate
+```
+
+## scipy.io
+
+```@docs
+io
+```
+
+## scipy.linalg
+
+```@docs
+linalg
+```
+
 # Accessing docstring
 
 You can access docstring of a SciPy function:

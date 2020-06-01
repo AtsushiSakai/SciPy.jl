@@ -12,7 +12,7 @@ using PyCall
 using InteractiveUtils
 
 export print_configulations
-export cluster, constants, fft, integrate, interpolate, io
+export cluster, constants, fft, integrate, interpolate, io, linalg
 
 
 const scipy = PyNULL()
@@ -184,8 +184,26 @@ Dict{String,Any} with 2 entries:
 julia> SciPy.io.savemat("sample_data.mat", mdic)
 ```
 """
-
 const io = PyNULL()
+
+"""
+Scipy.linalg module
+
+- [Linear algebra (scipy.linalg) Reference Guide](https://docs.scipy.org/doc/scipy/reference/linalg.html)
+
+
+# Examples
+
+You can compute the matrix exponential using Pade approximation:
+
+```julia-repl
+julia> SciPy.linalg.expm(zeros((2,2)))
+2×2 Array{Float64,2}:
+ 1.0  0.0
+ 0.0  1.0
+```
+"""
+const linalg = PyNULL()
 
 
 """
@@ -200,6 +218,7 @@ function __init__()
     copy!(integrate, pyimport_conda("scipy.integrate", "scipy"))
     copy!(interpolate, pyimport_conda("scipy.interpolate", "scipy"))
     copy!(io, pyimport_conda("scipy.io", "scipy"))
+    copy!(linalg, pyimport_conda("scipy.linalg", "scipy"))
 
 end
 
