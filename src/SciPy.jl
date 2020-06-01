@@ -12,7 +12,7 @@ using PyCall
 using InteractiveUtils
 
 export print_configulations
-export cluster, constants, fft, integrate, interpolate
+export cluster, constants, fft, integrate, interpolate, io
 
 
 const scipy = PyNULL()
@@ -165,6 +165,28 @@ julia> f(0.5)
 """
 const interpolate = PyNULL()
 
+"""
+Scipy.io module
+
+- [Input and output (scipy.io) Reference Guide](https://docs.scipy.org/doc/scipy/reference/io.html)
+
+
+# Examples
+
+You can save a MATLAB-style .mat file:
+
+```julia-repl
+julia> mdic = Dict([("a", 100), ("label", "experiment")])
+Dict{String,Any} with 2 entries:
+  "label" => "experiment"
+  "a"     => 100
+
+julia> SciPy.io.savemat("sample_data.mat", mdic)
+```
+"""
+
+const io = PyNULL()
+
 
 """
 Module initialization function
@@ -177,6 +199,7 @@ function __init__()
     copy!(fft, pyimport_conda("scipy.fft", "scipy"))
     copy!(integrate, pyimport_conda("scipy.integrate", "scipy"))
     copy!(interpolate, pyimport_conda("scipy.interpolate", "scipy"))
+    copy!(io, pyimport_conda("scipy.io", "scipy"))
 
 end
 

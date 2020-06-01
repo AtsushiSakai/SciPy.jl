@@ -14,6 +14,9 @@ You can use many useful scientific functions of SciPy from Julia codes.
 
 You can know which kind of functions are available in the [SciPy Reference Guide](https://docs.scipy.org/doc/scipy/reference/).
 
+# Requirements
+
+Julia 1.4.x or higher.
 
 # Install
 
@@ -56,8 +59,15 @@ constants
 fft
 ```
 
-# Help
+# Accessing docstring
 
+You can access docstring of a SciPy function:
+
+```julia-repl
+help?> SciPy.io.savemat
+
+    Save a dictionary of names and arrays into a MATLAB-style .mat file.
+```
 
 # Index
 

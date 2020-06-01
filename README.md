@@ -8,6 +8,10 @@ A Julia interface for [SciPy](https://www.scipy.org/scipylib/index.html) using [
 
 You can use many useful scientific functions of SciPy from Julia codes.
 
+# Requirements
+
+Julia 1.4.x or higher.
+
 # Install
 
 ```jl
@@ -29,3 +33,6 @@ You can check latest documentation here:
 - [SciPy.jl Documentation](https://atsushisakai.github.io/SciPy.jl/stable)
 
 
+# Author
+
+- [Atsushi Sakai](https://github.com/AtsushiSakai/) ([@Atsushi_twi](https://twitter.com/Atsushi_twi))
