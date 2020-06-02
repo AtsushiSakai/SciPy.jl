@@ -101,6 +101,12 @@ optimize
 signal
 ```
 
+## scipy.sparse
+
+```@docs
+sparse
+```
+
 # Accessing docstring
 
 You can access docstring of a SciPy function:

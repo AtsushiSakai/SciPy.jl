@@ -13,7 +13,7 @@ using InteractiveUtils
 
 export print_configulations
 export cluster, constants, fft, integrate, interpolate, io, linalg, ndimage, odr
-export optimize, signal
+export optimize, signal, sparse
 
 
 const scipy = PyNULL()
@@ -319,6 +319,26 @@ julia> SciPy.signal.kaiser_beta(65)
 """
 const signal = PyNULL()
 
+"""
+scipy.sparse module
+
+- [Sparse matrices (scipy.sparse) Reference Guide](https://docs.scipy.org/doc/scipy/reference/sparse.html)
+
+
+# Examples
+
+You can create a block sparse row matrix:
+
+```julia-repl
+julia> a = SciPy.sparse.bsr_matrix((3, 4)).toarray()
+3×4 Array{Float64,2}:
+ 0.0  0.0  0.0  0.0
+ 0.0  0.0  0.0  0.0
+ 0.0  0.0  0.0  0.0
+```
+"""
+const sparse = PyNULL()
+
 
 """
 Module initialization function
@@ -337,6 +357,7 @@ function __init__()
     copy!(odr, pyimport_conda("scipy.odr", "scipy"))
     copy!(optimize, pyimport_conda("scipy.optimize", "scipy"))
     copy!(signal, pyimport_conda("scipy.signal", "scipy"))
+    copy!(sparse, pyimport_conda("scipy.sparse", "scipy"))
 
 end
 
