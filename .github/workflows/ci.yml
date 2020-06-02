@@ -18,8 +18,15 @@ jobs:
           - windows-latest
         arch:
           - x64
+        python-version:
+          - '3.8'
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: install scipy
+        run: pip install scipy
       - uses: julia-actions/setup-julia@v1
         with:
           version: ${{ matrix.version }}
@@ -38,9 +45,14 @@ jobs:
       - uses: julia-actions/julia-runtest@latest
   docs:
     name: Documentation
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: install scipy
+        run: pip install scipy
       - uses: julia-actions/setup-julia@v1
         with:
           version: '1'
@@ -53,3 +65,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }}
+      - uses: actions/upload-artifact@v2
+        with:
+          name: docs
+          path: docs/build/
