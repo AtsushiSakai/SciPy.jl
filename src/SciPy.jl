@@ -13,7 +13,7 @@ using InteractiveUtils
 
 export print_configulations
 export cluster, constants, fft, integrate, interpolate, io, linalg, ndimage, odr
-export optimize, signal, sparse
+export optimize, signal, sparse, spatial, stats
 
 
 const scipy = PyNULL()
@@ -327,17 +327,79 @@ scipy.sparse module
 
 # Examples
 
-You can create a block sparse row matrix:
+You can do sparse matrix calculation:
 
 ```julia-repl
-julia> a = SciPy.sparse.bsr_matrix((3, 4)).toarray()
-3×4 Array{Float64,2}:
- 0.0  0.0  0.0  0.0
- 0.0  0.0  0.0  0.0
- 0.0  0.0  0.0  0.0
+julia> A = SciPy.sparse.csc_matrix([[1.0 0.0];
+                                   [1.0 2.0]]);
+
+julia> Ainv = SciPy.sparse.linalg.inv(A);
+
+julia> A.dot(Ainv).todense()
+2×2 Array{Float64,2}:
+ 1.0  0.0
+ 0.0  1.0
+
 ```
 """
 const sparse = PyNULL()
+
+"""
+scipy.spatial module
+
+- [Spatial algorithms and data structures (scipy.spatial) Reference Guide](https://docs.scipy.org/doc/scipy/reference/spatial.html)
+
+
+# Examples
+
+You can calculate several rotation representations:
+
+```julia-repl
+julia> R = SciPy.spatial.transform.Rotation;
+
+julia> r = R.from_quat([0, 0, sin(π/4.0), cos(π/4)]);
+
+julia> r.as_matrix()
+3×3 Array{Float64,2}:
+ 2.22045e-16  -1.0          0.0
+ 1.0           2.22045e-16  0.0
+ 0.0           0.0          1.0
+
+julia> r.as_rotvec()
+3-element Array{Float64,1}:
+ 0.0
+ 0.0
+ 1.5707963267948963
+
+julia> r.as_euler("zyx", degrees=true)
+3-element Array{Float64,1}:
+ 90.0
+  0.0
+  0.0
+```
+"""
+const spatial = PyNULL()
+
+"""
+scipy.stats module
+
+- [Statistical functions (scipy.stats) Reference Guide](https://docs.scipy.org/doc/scipy/reference/stats.html)
+
+
+# Examples
+
+You can calculate Pearson correlation coefficient and p-value:
+
+```julia-repl
+julia> a = [0, 0, 0, 1, 1, 1, 1];
+
+julia> b = collect(0:6);
+
+julia> SciPy.stats.pearsonr(a, b)
+(0.8660254037844386, 0.011724811003954649)
+```
+"""
+const stats = PyNULL()
 
 
 """
@@ -358,6 +420,8 @@ function __init__()
     copy!(optimize, pyimport_conda("scipy.optimize", "scipy"))
     copy!(signal, pyimport_conda("scipy.signal", "scipy"))
     copy!(sparse, pyimport_conda("scipy.sparse", "scipy"))
+    copy!(spatial, pyimport_conda("scipy.spatial", "scipy"))
+    copy!(stats, pyimport_conda("scipy.stats", "scipy"))
 
 end
 

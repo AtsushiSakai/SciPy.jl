@@ -107,6 +107,18 @@ signal
 sparse
 ```
 
+## scipy.spatial
+
+```@docs
+spatial
+```
+
+## scipy.stats
+
+```@docs
+sparse
+```
+
 # Accessing docstring
 
 You can access docstring of a SciPy function:
