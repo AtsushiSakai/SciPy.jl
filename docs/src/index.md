@@ -116,7 +116,7 @@ spatial
 ## scipy.stats
 
 ```@docs
-sparse
+stats
 ```
 
 # Accessing docstring
