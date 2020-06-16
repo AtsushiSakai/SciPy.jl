@@ -4,6 +4,10 @@
 # Build docker image
 # >$ docker build -t asakai/scipyjl:v0.1.0 .
 #
+# Or pull docker image from docker hub
+# >$ docker pull asakai/scipyjl
+# URL: https://hub.docker.com/repository/docker/asakai/scipyjl
+#
 # Run Docker container
 # >$ docker run -it --name scipyjl asakai/scipyjl:v0.1.0
 
