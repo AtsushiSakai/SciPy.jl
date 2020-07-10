@@ -69,3 +69,8 @@ jobs:
         with:
           name: docs
           path: docs/build/
+      - uses: actions/upload-artifact@v2
+        with:
+          name: index
+          path: docs/build/index.html
+      
