@@ -1,0 +1,25 @@
+version: 2.1
+
+jobs:
+  build_doc:
+    docker:
+      - image: julia:latest
+    steps:
+      - checkout
+      - run:
+          name: install git
+          command: apt-get update && apt-get install -y git
+      - run:
+          name: install package
+          command: julia --project=docs -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate()'
+      - run:
+          name: Build docs
+          command: julia --project=docs docs/make.jl
+      - store_artifacts:
+          path: docs/build/
+          destination: html
+
+workflows:
+  main:
+    jobs:
+      - build_doc
