@@ -7,6 +7,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: install git
+          command: apt-get update && apt-get install -y git
+      - run:
           name: install package
           command: julia --project=docs -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate()'
       - run:
