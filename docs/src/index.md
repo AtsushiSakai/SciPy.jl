@@ -39,7 +39,7 @@ Then, command this in Pkg mode:
 
 # How to use
 
-You can access each SciPy modules as belows:
+You can access each SciPy module as belows:
 
 ## scipy.cluster
 
