@@ -7,8 +7,10 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Build docs
+          name: install package
           command: julia --project=docs -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate()'
+      - run:
+          name: Build docs
           command: julia --project=docs docs/make.jl
       - store_artifacts:
           path: docs/build/
