@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  build_docs:
+  build_doc:
     docker:
       - image: julia:latest
     steps:
@@ -17,4 +17,4 @@ jobs:
 workflows:
   main:
     jobs:
-      - build_docs
+      - build_doc
