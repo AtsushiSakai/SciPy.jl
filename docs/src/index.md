@@ -8,7 +8,7 @@ CurrentModule = SciPy
 [![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://AtsushiSakai.github.io/SciPy.jl/stable)
 [![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://AtsushiSakai.github.io/SciPy.jl/dev)
 
-<img src="assets/scipyjl_logo.png" alt="drawing" width="200"/>
+![logo](assets/scipyjl_logo.png)
 
 A Julia interface for [SciPy](https://www.scipy.org/scipylib/index.html) using [PyCall.jl](https://github.com/JuliaPy/PyCall.jl).
 
