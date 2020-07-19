@@ -54,6 +54,7 @@ cluster
 - [scipy\.cluster\.vq\.kmeans Reference Guide](http://scipy.github.io/devdocs/generated/scipy.cluster.vq.kmeans.html#scipy.cluster.vq.kmeans)
 
 ```@example
+using SciPy # hide
 using PyPlot # hide
 using Distributions # hide
 n_points = 50
