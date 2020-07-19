@@ -1,5 +1,6 @@
 using SciPy
 using Documenter
+using PyPlot # for figure generation
 
 makedocs(;
     modules=[SciPy],

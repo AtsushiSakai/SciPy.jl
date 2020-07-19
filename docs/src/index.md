@@ -57,6 +57,9 @@ plot(x, y)
 savefig("plot.png") # hide
 ```
 
+![](plot.png)
+
+
 ## scipy.constants
 
 ```@docs
