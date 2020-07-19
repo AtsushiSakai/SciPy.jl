@@ -55,14 +55,14 @@ cluster
 
 ```@example
 using PyPlot # hide
-n_points = 50;
-points1=[rand(Normal(0.0, 0.2), n_points) rand(Normal(0.0, 3.0), n_points)];
-points2=[rand(Normal(3.0, 0.5), n_points) rand(Normal(2.0, 0.5), n_points)];
-points=[points1; points2];
-whitened = cluster.vq.whiten(points);
-codebook, distortion = cluster.vq.kmeans(whitened, [whitened[1,:] whitened[3,:]] );
-plot(whitened[:, 1], whitened[:, 2], ".k");
-plot(codebook[:, 1], codebook[:, 2], "or");
+n_points = 50
+points1=[rand(Normal(0.0, 0.2), n_points) rand(Normal(0.0, 3.0), n_points)]
+points2=[rand(Normal(3.0, 0.5), n_points) rand(Normal(2.0, 0.5), n_points)]
+points=[points1; points2]
+whitened = cluster.vq.whiten(points)
+codebook, distortion = cluster.vq.kmeans(whitened, [whitened[1,:] whitened[3,:]])
+plot(whitened[:, 1], whitened[:, 2], ".k")
+plot(codebook[:, 1], codebook[:, 2], "or")
 savefig("cluster_vq_kmeans.png") # hide
 ```
 
