@@ -49,6 +49,14 @@ You can access each SciPy modules as belows:
 cluster
 ```
 
+```@example
+using PyPlot # hide
+x = [x for x in -2pi:0.1:2pi]
+y = sin.(x)
+plot(x, y)
+savefig("plot.png") # hide
+```
+
 ## scipy.constants
 
 ```@docs

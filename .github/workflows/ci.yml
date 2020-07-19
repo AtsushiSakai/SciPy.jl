@@ -53,6 +53,8 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: install scipy
         run: pip install scipy
+      - name: install matplotlib
+        run: pip install matplotlib
       - uses: julia-actions/setup-julia@v1
         with:
           version: '1'
