@@ -49,7 +49,7 @@ You can access each SciPy modules as belows:
 cluster
 ```
 
-### scipy.cluster.vq.kmeans
+### Example: scipy.cluster.vq.kmeans
 
 - [scipy\.cluster\.vq\.kmeans Reference Guide](http://scipy.github.io/devdocs/generated/scipy.cluster.vq.kmeans.html#scipy.cluster.vq.kmeans)
 
@@ -58,7 +58,7 @@ using SciPy # hide
 using PyPlot # hide
 using Distributions # hide
 n_points = 50
-points1=[rand(Normal(0.0, 0.2), n_points) rand(Normal(0.0, 3.0), n_points)]
+points1=[rand(Normal(0.0, 0.2), n_points) rand(Normal(0.0, 1.0), n_points)]
 points2=[rand(Normal(3.0, 0.5), n_points) rand(Normal(2.0, 0.5), n_points)]
 points=[points1; points2]
 whitened = cluster.vq.whiten(points)
