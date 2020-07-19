@@ -49,15 +49,24 @@ You can access each SciPy modules as belows:
 cluster
 ```
 
+### scipy.cluster.vq.kmeans
+
+- [scipy\.cluster\.vq\.kmeans Reference Guide](http://scipy.github.io/devdocs/generated/scipy.cluster.vq.kmeans.html#scipy.cluster.vq.kmeans)
+
 ```@example
 using PyPlot # hide
-x = [x for x in -2pi:0.1:2pi]
-y = sin.(x)
-plot(x, y)
-savefig("plot.png") # hide
+n_points = 50;
+points1=[rand(Normal(0.0, 0.2), n_points) rand(Normal(0.0, 3.0), n_points)];
+points2=[rand(Normal(3.0, 0.5), n_points) rand(Normal(2.0, 0.5), n_points)];
+points=[points1; points2];
+whitened = cluster.vq.whiten(points);
+codebook, distortion = cluster.vq.kmeans(whitened, [whitened[1,:] whitened[3,:]] );
+plot(whitened[:, 1], whitened[:, 2], ".k");
+plot(codebook[:, 1], codebook[:, 2], "or");
+savefig("cluster_vq_kmeans.png") # hide
 ```
 
-![](plot.png)
+![](cluster_vq_kmeans.png)
 
 
 ## scipy.constants
