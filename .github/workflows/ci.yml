@@ -64,6 +64,7 @@ jobs:
             Pkg.develop(PackageSpec(path=pwd()))
             Pkg.instantiate()
             Pkg.add("PyPlot")  # for document plotting
+            Pkg.add("Distributions")
             '
       - run: julia --project=docs docs/make.jl
         env:
