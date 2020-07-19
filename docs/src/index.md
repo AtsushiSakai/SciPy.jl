@@ -65,6 +65,7 @@ whitened = cluster.vq.whiten(points)
 codebook, distortion = cluster.vq.kmeans(whitened, [whitened[1,:] whitened[3,:]])
 plot(whitened[:, 1], whitened[:, 2], ".k")
 plot(codebook[:, 1], codebook[:, 2], "or")
+axis("equal")
 savefig("cluster_vq_kmeans.png") # hide
 ```
 
