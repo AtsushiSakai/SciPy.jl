@@ -21,7 +21,7 @@ const scipy = PyNULL()
 """
 scipy.cluster module
 
-- [Clustering package (scipy.cluster) v1.4.1 Reference Guide](https://docs.scipy.org/doc/scipy/reference/cluster.html)
+- [Clustering package (scipy.cluster) Reference Guide](https://docs.scipy.org/doc/scipy/reference/cluster.html)
 
 # Examples
 
