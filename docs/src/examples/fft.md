@@ -1,0 +1,6 @@
+# scipy.fft
+
+```@docs
+fft
+```
+

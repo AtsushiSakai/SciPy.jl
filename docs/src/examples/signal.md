@@ -1,0 +1,6 @@
+# scipy.signal
+
+```@docs
+signal
+```
+

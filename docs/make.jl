@@ -15,7 +15,20 @@ makedocs(;
     ),
     pages=[
         "Home" => "index.md",
-        "Examples" => "examples.md",
+        "Examples" => Any[
+            "cluster" => "cluster.md",
+            "constants" => "constants.md",
+            "fft" => "fft.md",
+            "interpolate" => "interpolate.md",
+            "io" => "io.md",
+            "linalg" => "linalg.md",
+            "ndimage" => "ndimage.md",
+            "odr" => "odr.md",
+            "optimize" => "optimize.md",
+            "signal" => "signal.md",
+            "sparse" => "sparse.md",
+            "stats" => "stats.md",
+        ],
     ],
 )
 

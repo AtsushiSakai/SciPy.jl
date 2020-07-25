@@ -1,0 +1,6 @@
+# scipy.sparse
+
+```@docs
+sparse
+```
+

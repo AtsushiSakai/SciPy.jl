@@ -1,0 +1,6 @@
+# scipy.spatial
+
+```@docs
+spatial
+```
+

@@ -1,12 +1,10 @@
-# Examples
-
-## scipy.cluster
+# scipy.cluster
 
 ```@docs
 cluster
 ```
 
-### Example: scipy.cluster.vq.kmeans
+## scipy.cluster.vq.kmeans
 
 - [scipy\.cluster\.vq\.kmeans Reference Guide](http://scipy.github.io/devdocs/generated/scipy.cluster.vq.kmeans.html#scipy.cluster.vq.kmeans)
 
@@ -27,81 +25,5 @@ savefig("cluster_vq_kmeans.png") # hide
 ```
 
 ![](cluster_vq_kmeans.png)
-
-
-## scipy.constants
-
-```@docs
-constants
-```
-
-## scipy.fft
-
-```@docs
-fft
-```
-
-## scipy.interpolate
-
-```@docs
-interpolate
-```
-
-## scipy.io
-
-```@docs
-io
-```
-
-## scipy.linalg
-
-```@docs
-linalg
-```
-
-## scipy.ndimage
-
-```@docs
-ndimage
-```
-
-## scipy.odr
-
-```@docs
-odr
-```
-
-## scipy.optimize
-
-```@docs
-optimize
-```
-
-## scipy.signal
-
-```@docs
-signal
-```
-
-## scipy.sparse
-
-```@docs
-sparse
-```
-
-## scipy.spatial
-
-```@docs
-spatial
-```
-
-## scipy.stats
-
-```@docs
-stats
-```
-
-
-
 
 

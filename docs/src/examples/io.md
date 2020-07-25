@@ -1,0 +1,6 @@
+# scipy.io
+
+```@docs
+io
+```
+

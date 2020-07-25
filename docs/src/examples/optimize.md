@@ -1,0 +1,6 @@
+# scipy.optimize
+
+```@docs
+optimize
+```
+

@@ -1,0 +1,6 @@
+# scipy.ndimage
+
+```@docs
+ndimage
+```
+

@@ -1,0 +1,7 @@
+
+# scipy.linalg
+
+```@docs
+linalg
+```
+
