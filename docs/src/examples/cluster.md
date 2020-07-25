@@ -12,6 +12,7 @@ cluster
 using SciPy # hide
 using PyPlot # hide
 using Distributions # hide
+close("all") # hide
 n_points = 50
 points1=[rand(Normal(0.0, 0.2), n_points) rand(Normal(0.0, 1.0), n_points)]
 points2=[rand(Normal(3.0, 0.5), n_points) rand(Normal(2.0, 0.5), n_points)]

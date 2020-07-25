@@ -11,11 +11,11 @@ fft
 ```@example
 using SciPy # hide
 using PyPlot # hide
+close("all") # hide
 t = collect(0:256)
 sp = fft.fftshift(fft.fft(sin.(t)))
 freq = fft.fftshift(fft.fftfreq(size(t)[end]))
 plot(freq, real(sp), freq, imag(sp))
-axis("auto") # hide
 savefig("fft.png") # hide
 ```
 
