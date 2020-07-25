@@ -18,7 +18,7 @@ makedocs(;
         "Examples" => Any[
             "cluster" => "examples/cluster.md",
             "constants" => "examples/constants.md",
-            "fft" => "fft.md",
+            "fft" => "examples/fft.md",
             "interpolate" => "examples/interpolate.md",
             "io" => "examples/io.md",
             "linalg" => "examples/linalg.md",
