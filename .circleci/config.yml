@@ -20,6 +20,8 @@ jobs:
       - run:
           name: Build docs
           command: julia --project=docs docs/make.jl
+          environment:
+            CI: true
       - store_artifacts:
           path: docs/build/
           destination: html
