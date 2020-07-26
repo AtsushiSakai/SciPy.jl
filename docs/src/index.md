@@ -56,11 +56,11 @@ help?> SciPy.io.savemat
     ...
 ```
 
-## Accessing docstring
+## Print configulations
 
 ```@example
-using SciPy
-SciPy.print_configulations()
+using SciPy;
+SciPy.print_configulations();
 ```
 
 
