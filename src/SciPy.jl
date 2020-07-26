@@ -13,7 +13,7 @@ using InteractiveUtils
 
 export print_configulations
 export cluster, constants, fft, integrate, interpolate, io, linalg, ndimage, odr
-export optimize, signal, sparse, spatial, stats
+export optimize, signal, sparse, spatial, stats, special
 
 
 const scipy = PyNULL()
@@ -381,6 +381,15 @@ julia> r.as_euler("zyx", degrees=true)
 const spatial = PyNULL()
 
 """
+scipy.special module
+
+- [Special functions (scipy.special) Reference Guide](https://docs.scipy.org/doc/scipy/reference/special.html)
+
+"""
+const special = PyNULL()
+
+
+"""
 scipy.stats module
 
 - [Statistical functions (scipy.stats) Reference Guide](https://docs.scipy.org/doc/scipy/reference/stats.html)
@@ -421,6 +430,7 @@ function __init__()
     copy!(signal, pyimport_conda("scipy.signal", "scipy"))
     copy!(sparse, pyimport_conda("scipy.sparse", "scipy"))
     copy!(spatial, pyimport_conda("scipy.spatial", "scipy"))
+    copy!(special, pyimport_conda("scipy.special", "scipy"))
     copy!(stats, pyimport_conda("scipy.stats", "scipy"))
 
 end
