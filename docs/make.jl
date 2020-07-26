@@ -29,6 +29,7 @@ makedocs(;
             "sparse" => "examples/sparse.md",
             "stats" => "examples/stats.md",
         ],
+        "API References" => "api_references.md",
     ],
 )
 

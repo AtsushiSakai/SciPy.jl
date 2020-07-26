@@ -39,9 +39,7 @@ Then, command this in Pkg mode:
 
 # How to use
 
-You can check Example sections for each scipy modules:
-
-- [Examples](@ref)
+You can check "Examples" sections for each scipy modules.
 
 
 
@@ -58,13 +56,17 @@ help?> SciPy.io.savemat
     ...
 ```
 
+## Print dependency configulations:
+
+You can print dependency configulations of SciPy:
+
+```@example
+using SciPy
+print_configulations()
+```
+
 # Index
 
 ```@index
 ```
 
-# API Reference
-
-```@autodocs
-Modules = [SciPy]
-```
