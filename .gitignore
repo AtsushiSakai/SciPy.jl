@@ -1,3 +1,6 @@
 /docs/build/
 Manifest.toml
 .DS_Store
+*.pptx
+.idea
+.ipynb_checkpoints

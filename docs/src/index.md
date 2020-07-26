@@ -8,8 +8,6 @@ CurrentModule = SciPy
 [![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://AtsushiSakai.github.io/SciPy.jl/stable)
 [![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://AtsushiSakai.github.io/SciPy.jl/dev)
 
-![logo](assets/scipyjl_logo_small.png)
-
 A Julia interface for [SciPy](https://www.scipy.org/scipylib/index.html) using [PyCall.jl](https://github.com/JuliaPy/PyCall.jl).
 
 You can use many useful scientific functions of SciPy from Julia codes.
@@ -41,87 +39,13 @@ Then, command this in Pkg mode:
 
 # How to use
 
-You can access each SciPy modules as belows:
+You can check "Examples" sections for each scipy modules.
 
-## scipy.cluster
 
-```@docs
-cluster
-```
 
-## scipy.constants
+Other utility functionalities are available as belows:
 
-```@docs
-constants
-```
-
-## scipy.fft
-
-```@docs
-fft
-```
-
-## scipy.interpolate
-
-```@docs
-interpolate
-```
-
-## scipy.io
-
-```@docs
-io
-```
-
-## scipy.linalg
-
-```@docs
-linalg
-```
-
-## scipy.ndimage
-
-```@docs
-ndimage
-```
-
-## scipy.odr
-
-```@docs
-odr
-```
-
-## scipy.optimize
-
-```@docs
-optimize
-```
-
-## scipy.signal
-
-```@docs
-signal
-```
-
-## scipy.sparse
-
-```@docs
-sparse
-```
-
-## scipy.spatial
-
-```@docs
-spatial
-```
-
-## scipy.stats
-
-```@docs
-stats
-```
-
-# Accessing docstring
+## Accessing docstring
 
 You can access docstring of a SciPy function:
 
@@ -132,13 +56,38 @@ help?> SciPy.io.savemat
     ...
 ```
 
+## Print configulations
+
+You can check dependency configulations of SciPy using [`print_configulations()`](@ref).
+
+```julia-repl
+julia> print_configulations();
+==== SciPy.jl configulations ====
+-- Julia settings --
+Julia Version 1.4.2
+Commit 44fa15b150* (2020-05-23 18:35 UTC)
+Platform Info:
+  OS: macOS (x86_64-apple-darwin18.7.0)
+  CPU: Intel(R) Core(TM) i7-7660U CPU @ 2.50GHz
+  WORD_SIZE: 64
+  LIBM: libopenlibm
+  LLVM: libLLVM-8.0.1 (ORCJIT, skylake)
+Environment:
+  JULIA_NUM_THREADS = 4
+  JULIA_EDITOR = vim
+-- PyCall.jl settings --
+PyCall.pyversion = v"3.7.1"
+PyCall.libpython = "/Users/user/.julia/conda/3/lib/libpython3.7m.dylib"
+PyCall.pyprogramname = "/Users/user/.julia/conda/3/bin/python"
+PyCall.conda = true
+-- SciPy settings --
+scipy.__version__ = "1.4.1"
+scipy.version.full_version = "1.4.1"
+scipy.version.git_revision = "Unknown"
+```
+
 # Index
 
 ```@index
 ```
 
-# API Reference
-
-```@autodocs
-Modules = [SciPy]
-```

@@ -1,5 +1,7 @@
 using SciPy
 using Documenter
+using PyPlot # for figure generation
+using Distributions
 
 makedocs(;
     modules=[SciPy],
@@ -9,10 +11,26 @@ makedocs(;
     format=Documenter.HTML(;
         prettyurls=get(ENV, "CI", "false") == "true",
         canonical="https://AtsushiSakai.github.io/SciPy.jl",
-        assets=String[],
+        assets=String["assets/favicon.ico"],
     ),
     pages=[
         "Home" => "index.md",
+        "Examples" => Any[
+            "cluster" => "examples/cluster.md",
+            "constants" => "examples/constants.md",
+            "fft" => "examples/fft.md",
+            "interpolate" => "examples/interpolate.md",
+            "io" => "examples/io.md",
+            "linalg" => "examples/linalg.md",
+            "ndimage" => "examples/ndimage.md",
+            "odr" => "examples/odr.md",
+            "optimize" => "examples/optimize.md",
+            "signal" => "examples/signal.md",
+            "sparse" => "examples/sparse.md",
+            "spatial" => "examples/spatial.md",
+            "stats" => "examples/stats.md",
+        ],
+        "API References" => "api_references.md",
     ],
 )
 
