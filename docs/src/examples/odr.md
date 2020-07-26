@@ -22,7 +22,6 @@ odr_obj = odr.ODR(data, poly_model)
 output = odr_obj.run()  # running ODR fitting
 a = output.beta
 y_odr = a[4].*x.^3+a[3].*x.^2+a[2].*x.^1 .+ a[1]
-println(y_odr)
 plt.plot(x, y, label="input data")
 plt.plot(x, y_odr, label="polynomial ODR")#
 plt.legend()

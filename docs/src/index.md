@@ -39,10 +39,15 @@ Then, command this in Pkg mode:
 
 # How to use
 
-You can access each SciPy modules as belows:
+You can check Example sections for each scipy modules:
+
+- [Examples](@ref)
 
 
-# Accessing docstring
+
+Other utility functionalities are available as belows:
+
+## Accessing docstring
 
 You can access docstring of a SciPy function:
 
