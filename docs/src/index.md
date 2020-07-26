@@ -56,6 +56,15 @@ help?> SciPy.io.savemat
     ...
 ```
 
+## Accessing docstring
+
+```@example
+using SciPy
+SciPy.print_configulations()
+```
+
+
+
 # Index
 
 ```@index
