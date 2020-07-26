@@ -1,8 +1,9 @@
 # scipy.cluster
 
-```@docs
-cluster
-```
+scipy.cluster module
+
+- [Clustering package (scipy.cluster) Reference Guide](https://docs.scipy.org/doc/scipy/reference/cluster.html)
+
 
 ## vq.kmeans
 

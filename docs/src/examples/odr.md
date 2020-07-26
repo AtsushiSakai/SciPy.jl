@@ -1,8 +1,9 @@
 # scipy.odr
 
-```@docs
-odr
-```
+scipy.odr module
+
+- [Orthogonal distance regression (scipy.odr) Reference Guide](https://docs.scipy.org/doc/scipy/reference/odr.html)
+
 
 ## polynomial
 

@@ -1,8 +1,9 @@
 # scipy.interpolate
 
-```@docs
-interpolate
-```
+scipy.interpolate module
+
+- [Interpolation (scipy.interpolate) Reference Guide](https://docs.scipy.org/doc/scipy/reference/interpolate.html)
+
 
 ## scipy.interpolate.interp1d
 

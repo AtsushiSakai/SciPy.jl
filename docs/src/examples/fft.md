@@ -1,8 +1,9 @@
 # scipy.fft
 
-```@docs
-fft
-```
+scipy.fft module
+
+- [Discrete Fourier transforms (scipy.fft) Reference Guide](https://docs.scipy.org/doc/scipy/reference/fft.html)
+
 
 ## scipy.fft.fft
 

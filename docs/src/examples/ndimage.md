@@ -1,8 +1,8 @@
 # scipy.ndimage
 
-```@docs
-ndimage
-```
+scipy.ndimage module
+
+- [Multi-dimensional image processing (scipy.ndimage) Reference Guide](https://docs.scipy.org/doc/scipy/reference/ndimage.html)
 
 ## convolve
 

@@ -1,8 +1,9 @@
 # scipy.constants
 
-```@docs
-constants
-```
+scipy.constants module
+
+- [Constants (scipy.constants) Reference Guide](https://docs.scipy.org/doc/scipy/reference/constants.html)
+
 
 ## scipy.constants.physical_constants
 

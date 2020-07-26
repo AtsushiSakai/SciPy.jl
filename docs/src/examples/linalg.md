@@ -1,9 +1,10 @@
 
 # scipy.linalg
 
-```@docs
-linalg
-```
+scipy.linalg module
+
+- [Linear algebra (scipy.linalg) Reference Guide](https://docs.scipy.org/doc/scipy/reference/linalg.html)
+
 
 ## polar
 

@@ -1,8 +1,9 @@
 # scipy.optimize
 
-```@docs
-optimize
-```
+scipy.optimize module
+
+- [Optimization and Root Finding (scipy.optimize) Reference Guide](https://docs.scipy.org/doc/scipy/reference/optimize.html)
+
 
 ## linprog
 

@@ -1,8 +1,9 @@
 # scipy.io
 
-```@docs
-io
-```
+scipy.io module
+
+- [Input and output (scipy.io) Reference Guide](https://docs.scipy.org/doc/scipy/reference/io.html)
+
 
 ## scipy.io.hb_write, scipy.ip.hb_read
 
