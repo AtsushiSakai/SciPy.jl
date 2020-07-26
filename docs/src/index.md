@@ -56,15 +56,6 @@ help?> SciPy.io.savemat
     ...
 ```
 
-## Print dependency configulations:
-
-You can print dependency configulations of SciPy:
-
-```@example
-using SciPy
-print_configulations()
-```
-
 # Index
 
 ```@index
