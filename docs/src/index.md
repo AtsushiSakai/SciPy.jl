@@ -58,12 +58,33 @@ help?> SciPy.io.savemat
 
 ## Print configulations
 
-```@example
-using SciPy;
-SciPy.print_configulations();
+You can check dependency configulations of SciPy using [`print_configulations()`](@ref).
+
+```julia-repl
+julia> print_configulations();
+==== SciPy.jl configulations ====
+-- Julia settings --
+Julia Version 1.4.2
+Commit 44fa15b150* (2020-05-23 18:35 UTC)
+Platform Info:
+  OS: macOS (x86_64-apple-darwin18.7.0)
+  CPU: Intel(R) Core(TM) i7-7660U CPU @ 2.50GHz
+  WORD_SIZE: 64
+  LIBM: libopenlibm
+  LLVM: libLLVM-8.0.1 (ORCJIT, skylake)
+Environment:
+  JULIA_NUM_THREADS = 4
+  JULIA_EDITOR = vim
+-- PyCall.jl settings --
+PyCall.pyversion = v"3.7.1"
+PyCall.libpython = "/Users/user/.julia/conda/3/lib/libpython3.7m.dylib"
+PyCall.pyprogramname = "/Users/user/.julia/conda/3/bin/python"
+PyCall.conda = true
+-- SciPy settings --
+scipy.__version__ = "1.4.1"
+scipy.version.full_version = "1.4.1"
+scipy.version.git_revision = "Unknown"
 ```
-
-
 
 # Index
 
