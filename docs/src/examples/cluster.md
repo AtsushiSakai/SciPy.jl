@@ -4,7 +4,7 @@
 cluster
 ```
 
-## scipy.cluster.vq.kmeans
+## vq.kmeans
 
 - [scipy\.cluster\.vq\.kmeans Reference Guide](http://scipy.github.io/devdocs/generated/scipy.cluster.vq.kmeans.html#scipy.cluster.vq.kmeans)
 
