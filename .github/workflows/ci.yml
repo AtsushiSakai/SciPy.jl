@@ -9,8 +9,8 @@ jobs:
     strategy:
       matrix:
         version:
-          - '1.0'
-          - '1.4'
+          - '1.4' # Minimum
+          - '1.6' # Latest
           - 'nightly'
         os:
           - ubuntu-latest
@@ -19,7 +19,7 @@ jobs:
         arch:
           - x64
         python-version:
-          - '3.8'
+          - '3.9'
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
