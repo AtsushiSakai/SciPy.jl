@@ -12,7 +12,7 @@ You can use many useful scientific functions of SciPy from Julia codes.
 
 # Requirements
 
-Julia 1.4.x or higher.
+Julia 1.0 or higher.
 
 # Install
 
