@@ -28,6 +28,7 @@ makedocs(;
             "signal" => "examples/signal.md",
             "sparse" => "examples/sparse.md",
             "spatial" => "examples/spatial.md",
+            "special" => "examples/special.md",
             "stats" => "examples/stats.md",
         ],
         "API References" => "api_references.md",
