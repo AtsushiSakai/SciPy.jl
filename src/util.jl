@@ -1,4 +1,6 @@
 
+import PyCall: hasproperty # Base.hasproperty in Julia 1.2
+
 function _generate_docstring(f)
     py"""
     import inspect
