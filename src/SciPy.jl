@@ -18,6 +18,8 @@ export optimize, signal, sparse, spatial, stats, special
 
 const scipy = PyNULL()
 
+include("util.jl")
+
 """
 scipy.cluster module
 
@@ -389,26 +391,8 @@ scipy.special module
 const special = PyNULL()
 
 
-"""
-scipy.stats module
-
-- [Statistical functions (scipy.stats) Reference Guide](https://docs.scipy.org/doc/scipy/reference/stats.html)
-
-
-# Examples
-
-You can calculate Pearson correlation coefficient and p-value:
-
-```julia-repl
-julia> a = [0, 0, 0, 1, 1, 1, 1];
-
-julia> b = collect(0:6);
-
-julia> SciPy.stats.pearsonr(a, b)
-(0.8660254037844386, 0.011724811003954649)
-```
-"""
-const stats = PyNULL()
+const pystats = PyNULL()
+include("stats.jl")
 
 
 """
@@ -431,7 +415,7 @@ function __init__()
     copy!(sparse, pyimport_conda("scipy.sparse", "scipy"))
     copy!(spatial, pyimport_conda("scipy.spatial", "scipy"))
     copy!(special, pyimport_conda("scipy.special", "scipy"))
-    copy!(stats, pyimport_conda("scipy.stats", "scipy"))
+    copy!(pystats, pyimport_conda("scipy.stats", "scipy"))
 
 end
 
@@ -456,6 +440,5 @@ function print_configulations()
     @show scipy.version.full_version
     @show scipy.version.git_revision
 end
-
 
 end
