@@ -416,7 +416,6 @@ function __init__()
     copy!(spatial, pyimport_conda("scipy.spatial", "scipy"))
     copy!(special, pyimport_conda("scipy.special", "scipy"))
     copy!(pystats, pyimport_conda("scipy.stats", "scipy"))
-
 end
 
 """
