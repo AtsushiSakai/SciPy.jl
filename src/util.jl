@@ -38,8 +38,6 @@ function _generate_docstring(f)
     sig = hasproperty(f, "__call__") ? py"get_signature"(f) : ""
     fdoc = hasproperty(f, "__doc__") ? f.__doc__ : ""
 
-    # fdoc = replace(fdoc, "\n    " => "\n") # remove beginning tab
-
     return """
     $(fname)$(sig)
     $(fdoc)

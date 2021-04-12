@@ -14,6 +14,8 @@ using InteractiveUtils
 export print_configulations
 export cluster, constants, fft, integrate, interpolate, io, linalg, ndimage, odr
 export optimize, signal, sparse, spatial, stats, special
+# raw PyObject modules
+export pystats
 
 
 const scipy = PyNULL()
@@ -399,7 +401,6 @@ include("stats.jl")
 Module initialization function
 """
 function __init__()
-
     copy!(scipy, pyimport_conda("scipy", "scipy"))
     copy!(cluster, pyimport_conda("scipy.cluster", "scipy"))
     copy!(constants, pyimport_conda("scipy.constants", "scipy"))
