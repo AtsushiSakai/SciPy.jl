@@ -33,6 +33,7 @@ makedocs(;
         ],
         "API References" => "api_references.md",
     ],
+    doctest = false, # workaround for https://github.com/JuliaDocs/Documenter.jl/issues/1394
 )
 
 deploydocs(;

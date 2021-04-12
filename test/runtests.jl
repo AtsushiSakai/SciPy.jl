@@ -41,4 +41,7 @@ using Test
         @test f(0.5)[1] == 0.8582656552868946
     end
 
+    @testset "stats" begin
+        include("statsTest.jl")
+    end
 end
