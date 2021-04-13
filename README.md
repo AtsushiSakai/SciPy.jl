@@ -47,6 +47,7 @@ for i in 1:length(indexes)
 end
 ```
 ![spatial_KDTree_sample](https://github.com/AtsushiSakai/SciPy.jl/raw/master/docs/src/assets/spatial_KDTree_sample.png)
+<img src="https://github.com/AtsushiSakai/SciPy.jl/raw/master/docs/src/assets/spatial_KDTree_sample.png" width="200">
 
 # Documentation
 
