@@ -30,18 +30,15 @@ using Pkg;Pkg.add("SciPy")
 
 and then just import it with `using SciPy`.
 
-If you want use latest development code, clone this repo.
+If you want use latest development code:
 
-Then, command this in Pkg mode:
-
-> Pkg> dev /path/to/module
-
+```jl
+import Pkg; Pkg.add(Pkg.PackageSpec(name="SciPy", rev="master"))
+```
 
 # How to use
 
 You can check "Examples" sections for each scipy modules.
-
-
 
 Other utility functionalities are available as belows:
 
@@ -50,9 +47,10 @@ Other utility functionalities are available as belows:
 You can access docstring of a SciPy function:
 
 ```julia-repl
-help?> SciPy.io.savemat
+help?> SciPy.stats.gmean
+    gmean(a, axis=0, dtype=None)
 
-    Save a dictionary of names and arrays into a MATLAB-style .mat file.
+    Compute the geometric mean along the specified axis.
     ...
 ```
 
@@ -84,6 +82,26 @@ PyCall.conda = true
 scipy.__version__ = "1.4.1"
 scipy.version.full_version = "1.4.1"
 scipy.version.git_revision = "Unknown"
+```
+
+# Tips
+
+## How to update SciPy
+
+If you are using Linux, PyCall.jl uses `python3` program.
+
+You can update SciPy with:
+
+>$ pip install -U scipy
+
+
+
+If you are using Mac or Windows, PyCall.jl uses `Conda.jl` for python runtime.
+
+You can update SciPy with:
+
+```jl
+import Conda; Conda.update()
 ```
 
 # Index
