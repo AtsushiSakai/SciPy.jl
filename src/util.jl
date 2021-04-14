@@ -39,7 +39,7 @@ function _generate_docstring(f)
     fdoc = hasproperty(f, "__doc__") ? f.__doc__ : ""
 
     return """
-    $(fname)$(sig)
+        $(fname)$(sig)
     $(fdoc)
     """
 end

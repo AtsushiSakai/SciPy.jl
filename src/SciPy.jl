@@ -439,6 +439,7 @@ function print_configulations()
     @show scipy.__version__
     @show scipy.version.full_version
     @show scipy.version.git_revision
+    return nothing
 end
 
 end

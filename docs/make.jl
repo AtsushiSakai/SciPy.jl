@@ -15,6 +15,7 @@ makedocs(;
     ),
     pages=[
         "Home" => "index.md",
+        "Tips" => "tips.md",
         "Examples" => Any[
             "cluster" => "examples/cluster.md",
             "constants" => "examples/constants.md",
