@@ -15,6 +15,7 @@ makedocs(;
     ),
     pages=[
         "Home" => "index.md",
+        "Tips" => "tips.md",
         "Examples" => Any[
             "cluster" => "examples/cluster.md",
             "constants" => "examples/constants.md",
@@ -31,7 +32,6 @@ makedocs(;
             "special" => "examples/special.md",
             "stats" => "examples/stats.md",
         ],
-        "Tips" => "tips.md",
         "API References" => "api_references.md",
     ],
     doctest = false, # workaround for https://github.com/JuliaDocs/Documenter.jl/issues/1394
