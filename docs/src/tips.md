@@ -48,13 +48,11 @@ You can update SciPy with:
 
 >$ pip install -U scipy
 
-
-
 If you are using Mac or Windows, PyCall.jl uses `Conda.jl` for python runtime.
 
 You can update SciPy with:
 
-```jl
+```julia-repl
 julia> import Conda; Conda.update()
 ```
 
