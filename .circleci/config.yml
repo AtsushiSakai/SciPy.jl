@@ -1,13 +1,13 @@
-version: 2.1
-
-general:
-  branches:
-    ignore:
-      - gh-pages
 jobs:
-  build:
-    docker: 
-        - image: circleci/node:4.8.2
-      steps:
-        - checkout
-        - run: echo "hello world"
+  build_doc:
+    docker:
+      - image: julia:latest
+    steps:
+      - checkout
+      - run:
+          name: install git
+          command: apt-get update && apt-get install -y git
+workflows:
+  main:
+    jobs:
+      - build_doc
