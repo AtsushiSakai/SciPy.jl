@@ -16,7 +16,7 @@ You can know which kind of functions are available in the [SciPy Reference Guide
 
 # Requirements
 
-Julia 1.4.x or higher.
+Julia 1.0 or higher.
 
 # Install
 
@@ -40,69 +40,6 @@ import Pkg; Pkg.add(Pkg.PackageSpec(name="SciPy", rev="master"))
 
 You can check "Examples" sections for each scipy modules.
 
-Other utility functionalities are available as belows:
-
-## Accessing docstring
-
-You can access docstring of a SciPy function:
-
-```julia-repl
-help?> SciPy.stats.gmean
-    gmean(a, axis=0, dtype=None)
-
-    Compute the geometric mean along the specified axis.
-    ...
-```
-
-## Print configulations
-
-You can check dependency configulations of SciPy using [`print_configulations()`](@ref).
-
-```julia-repl
-julia> print_configulations();
-==== SciPy.jl configulations ====
--- Julia settings --
-Julia Version 1.4.2
-Commit 44fa15b150* (2020-05-23 18:35 UTC)
-Platform Info:
-  OS: macOS (x86_64-apple-darwin18.7.0)
-  CPU: Intel(R) Core(TM) i7-7660U CPU @ 2.50GHz
-  WORD_SIZE: 64
-  LIBM: libopenlibm
-  LLVM: libLLVM-8.0.1 (ORCJIT, skylake)
-Environment:
-  JULIA_NUM_THREADS = 4
-  JULIA_EDITOR = vim
--- PyCall.jl settings --
-PyCall.pyversion = v"3.7.1"
-PyCall.libpython = "/Users/user/.julia/conda/3/lib/libpython3.7m.dylib"
-PyCall.pyprogramname = "/Users/user/.julia/conda/3/bin/python"
-PyCall.conda = true
--- SciPy settings --
-scipy.__version__ = "1.4.1"
-scipy.version.full_version = "1.4.1"
-scipy.version.git_revision = "Unknown"
-```
-
-# Tips
-
-## How to update SciPy
-
-If you are using Linux, PyCall.jl uses `python3` program.
-
-You can update SciPy with:
-
->$ pip install -U scipy
-
-
-
-If you are using Mac or Windows, PyCall.jl uses `Conda.jl` for python runtime.
-
-You can update SciPy with:
-
-```jl
-import Conda; Conda.update()
-```
 
 # Index
 

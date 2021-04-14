@@ -31,6 +31,7 @@ makedocs(;
             "special" => "examples/special.md",
             "stats" => "examples/stats.md",
         ],
+        "Tips" => "tips.md",
         "API References" => "api_references.md",
     ],
     doctest = false, # workaround for https://github.com/JuliaDocs/Documenter.jl/issues/1394
