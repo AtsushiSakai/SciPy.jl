@@ -10,4 +10,8 @@ print("=== stats module ===")
 from scipy import stats
 print(json.dumps(stats.__all__))
 
+print("=== optimize module ===")
+from scipy import optimize
+print(json.dumps(optimize.__all__))
+
 

@@ -15,7 +15,7 @@ export print_configulations
 export cluster, constants, fft, integrate, interpolate, io, linalg, ndimage, odr
 export optimize, signal, sparse, spatial, stats, special
 # raw PyObject modules
-export pystats
+export pystats, pyoptimize
 
 
 const scipy = PyNULL()
@@ -277,33 +277,8 @@ julia> println(output.beta)
 """
 const odr = PyNULL()
 
-"""
-scipy.optimize module
-
-- [Optimization and Root Finding (scipy.optimize) Reference Guide](https://docs.scipy.org/doc/scipy/reference/optimize.html)
-
-
-# Examples
-
-You can optimize the Rosen function:
-
-```julia-repl
-julia> x0 = [1.3, 0.7, 0.8, 1.9, 1.2];
-
-julia> res = SciPy.optimize.minimize(SciPy.optimize.rosen, x0, method="Nelder-Mead", tol=1e-6)
-Dict{Any,Any} with 8 entries:
-  "fun"           => 1.94206e-13
-  "nit"           => 295
-  "nfev"          => 494
-  "status"        => 0
-  "success"       => true
-  "message"       => "Optimization terminated successfully."
-  "x"             => [1.0, 1.0, 1.0, 1.0, 1.0]
-  "final_simplex" => ([1.0 1.0 … 1.0 1.0; 1.0 1.0 … 1.0 1.0; … ; 1.0 1.0 … 1.0 1.0; 1.0 1.0 … 1.0 1.0], [1…
-
-```
-"""
-const optimize = PyNULL()
+const pyoptimize = PyNULL()
+include("optimize.jl")
 
 """
 scipy.signal module
@@ -411,12 +386,13 @@ function __init__()
     copy!(linalg, pyimport_conda("scipy.linalg", "scipy"))
     copy!(ndimage, pyimport_conda("scipy.ndimage", "scipy"))
     copy!(odr, pyimport_conda("scipy.odr", "scipy"))
-    copy!(optimize, pyimport_conda("scipy.optimize", "scipy"))
     copy!(signal, pyimport_conda("scipy.signal", "scipy"))
     copy!(sparse, pyimport_conda("scipy.sparse", "scipy"))
     copy!(spatial, pyimport_conda("scipy.spatial", "scipy"))
     copy!(special, pyimport_conda("scipy.special", "scipy"))
+
     copy!(pystats, pyimport_conda("scipy.stats", "scipy"))
+    copy!(pyoptimize, pyimport_conda("scipy.optimize", "scipy"))
 end
 
 """

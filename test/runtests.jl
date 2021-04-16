@@ -44,4 +44,9 @@ using Test
     @testset "stats" begin
         include("statsTest.jl")
     end
+
+    @testset "optimize" begin
+        include("optimizeTest.jl")
+    end
+
 end
