@@ -15,7 +15,7 @@ export print_configulations
 export cluster, constants, fft, integrate, interpolate, io, linalg, ndimage, odr
 export optimize, signal, sparse, spatial, stats, special
 # raw PyObject modules
-export pystats, pyoptimize
+export pystats, pyoptimize, pyinterpolate
 
 
 const scipy = PyNULL()
@@ -148,27 +148,8 @@ julia> SciPy.integrate.quad(f, 0, 4)
 """
 const integrate = PyNULL()
 
-"""
-scipy.interpolate module
-
-- [Interpolation (scipy.interpolate) Reference Guide](https://docs.scipy.org/doc/scipy/reference/interpolate.html)
-
-
-# Examples
-
-You can interpolate 1D data:
-
-```julia-repl
-julia> x = collect(0:10);
-julia> y = exp.(-x/3.0);
-julia> f = SciPy.interpolate.interp1d(x, y);
-julia> f(0.5)
-0-dimensional Array{Float64,0}:
-0.8582656552868946
-
-```
-"""
-const interpolate = PyNULL()
+const pyinterpolate = PyNULL()
+include("interpolate.jl")
 
 """
 scipy.io module
@@ -381,7 +362,7 @@ function __init__()
     copy!(constants, pyimport_conda("scipy.constants", "scipy"))
     copy!(fft, pyimport_conda("scipy.fft", "scipy"))
     copy!(integrate, pyimport_conda("scipy.integrate", "scipy"))
-    copy!(interpolate, pyimport_conda("scipy.interpolate", "scipy"))
+    copy!(pyinterpolate, pyimport_conda("scipy.interpolate", "scipy"))
     copy!(io, pyimport_conda("scipy.io", "scipy"))
     copy!(linalg, pyimport_conda("scipy.linalg", "scipy"))
     copy!(ndimage, pyimport_conda("scipy.ndimage", "scipy"))

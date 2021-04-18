@@ -35,10 +35,7 @@ using Test
     end
 
     @testset "interpolate" begin
-        x = collect(0:10)
-        y = exp.(-x/3.0)
-        f = SciPy.interpolate.interp1d(x, y)
-        @test f(0.5)[1] == 0.8582656552868946
+        include("interpolateTest.jl")
     end
 
     @testset "stats" begin
