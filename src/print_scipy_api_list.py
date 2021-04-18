@@ -14,4 +14,9 @@ print("=== optimize module ===")
 from scipy import optimize
 print(json.dumps(optimize.__all__))
 
+print("=== interpolate module ===")
+from scipy import interpolate
+print(json.dumps(interpolate.__all__))
+
+
 
