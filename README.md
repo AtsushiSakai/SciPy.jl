@@ -3,10 +3,13 @@
 [![Build Status](https://github.com/AtsushiSakai/SciPy.jl/workflows/CI/badge.svg)](https://github.com/AtsushiSakai/SciPy.jl/actions)
 [![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://AtsushiSakai.github.io/SciPy.jl/stable)
 [![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://AtsushiSakai.github.io/SciPy.jl/dev)
+[![version](https://juliahub.com/docs/SciPy/version.svg)](https://juliahub.com/ui/Packages/SciPy/g8Zlq)
+[![pkgeval](https://juliahub.com/docs/SciPy/pkgeval.svg)](https://juliahub.com/ui/Packages/SciPy/g8Zlq)
+[![deps](https://juliahub.com/docs/SciPy/deps.svg)](https://juliahub.com/ui/Packages/SciPy/g8Zlq?t=2)
 
 <p align="center"><img src="docs/src/assets/scipyjl_logo.png" alt="drawing" width="200"/></p>
 
-A Julia interface for [SciPy](https://www.scipy.org/scipylib/index.html) using [PyCall.jl](https://github.com/JuliaPy/PyCall.jl).
+[SciPy.jl](https://pkg.juliahub.com/ui/Packages/SciPy/g8Zlq/) is a Julia interface for [SciPy](https://www.scipy.org/scipylib/index.html) using [PyCall.jl](https://github.com/JuliaPy/PyCall.jl).
 
 You can use many useful scientific functions of SciPy from Julia codes.
 
