@@ -15,7 +15,7 @@ export print_configulations
 export cluster, constants, fft, integrate, interpolate, io, linalg, ndimage, odr
 export optimize, signal, sparse, spatial, stats, special
 # raw PyObject modules
-export pystats, pyoptimize, pyinterpolate
+export pystats, pyoptimize, pyinterpolate, pyspatial
 
 
 const scipy = PyNULL()
@@ -304,41 +304,8 @@ julia> A.dot(Ainv).todense()
 """
 const sparse = PyNULL()
 
-"""
-scipy.spatial module
-
-- [Spatial algorithms and data structures (scipy.spatial) Reference Guide](https://docs.scipy.org/doc/scipy/reference/spatial.html)
-
-
-# Examples
-
-You can calculate several rotation representations:
-
-```julia-repl
-julia> R = SciPy.spatial.transform.Rotation;
-
-julia> r = R.from_quat([0, 0, sin(π/4.0), cos(π/4)]);
-
-julia> r.as_matrix()
-3×3 Array{Float64,2}:
- 2.22045e-16  -1.0          0.0
- 1.0           2.22045e-16  0.0
- 0.0           0.0          1.0
-
-julia> r.as_rotvec()
-3-element Array{Float64,1}:
- 0.0
- 0.0
- 1.5707963267948963
-
-julia> r.as_euler("zyx", degrees=true)
-3-element Array{Float64,1}:
- 90.0
-  0.0
-  0.0
-```
-"""
-const spatial = PyNULL()
+const pyspatial = PyNULL()
+include("spatial.jl")
 
 """
 scipy.special module
@@ -362,18 +329,18 @@ function __init__()
     copy!(constants, pyimport_conda("scipy.constants", "scipy"))
     copy!(fft, pyimport_conda("scipy.fft", "scipy"))
     copy!(integrate, pyimport_conda("scipy.integrate", "scipy"))
-    copy!(pyinterpolate, pyimport_conda("scipy.interpolate", "scipy"))
     copy!(io, pyimport_conda("scipy.io", "scipy"))
     copy!(linalg, pyimport_conda("scipy.linalg", "scipy"))
     copy!(ndimage, pyimport_conda("scipy.ndimage", "scipy"))
     copy!(odr, pyimport_conda("scipy.odr", "scipy"))
     copy!(signal, pyimport_conda("scipy.signal", "scipy"))
     copy!(sparse, pyimport_conda("scipy.sparse", "scipy"))
-    copy!(spatial, pyimport_conda("scipy.spatial", "scipy"))
     copy!(special, pyimport_conda("scipy.special", "scipy"))
 
+    copy!(pyspatial, pyimport_conda("scipy.spatial", "scipy"))
     copy!(pystats, pyimport_conda("scipy.stats", "scipy"))
     copy!(pyoptimize, pyimport_conda("scipy.optimize", "scipy"))
+    copy!(pyinterpolate, pyimport_conda("scipy.interpolate", "scipy"))
 end
 
 """
