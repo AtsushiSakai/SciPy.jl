@@ -46,4 +46,8 @@ using Test
         include("optimizeTest.jl")
     end
 
+    @testset "spatial" begin
+        include("spatialTest.jl")
+    end
+
 end

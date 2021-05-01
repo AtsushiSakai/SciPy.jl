@@ -1,6 +1,6 @@
 """
 
-This is a python scipt to show API for each submodules of SciPy
+This is a python script to show API for each submodules of SciPy
 
 """
 import sys, scipy, numpy, json
@@ -18,5 +18,8 @@ print("=== interpolate module ===")
 from scipy import interpolate
 print(json.dumps(interpolate.__all__))
 
+print("=== spatial module ===")
+from scipy import spatial
+print(json.dumps(spatial.__all__))
 
 
