@@ -15,7 +15,7 @@ You can use many useful scientific functions of SciPy from Julia codes.
 
 # Requirements
 
-Julia 1.0 or higher.
+Julia 1.6 or higher.
 
 # Install
 
