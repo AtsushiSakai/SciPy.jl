@@ -20,7 +20,7 @@ Julia 1.0 or higher.
 # Install
 
 ```jl
-using Pkg;Pkg.add("SciPy")
+using Pkg; Pkg.add("SciPy")
 ```
 
 and then just import it with `using SciPy`.
@@ -36,6 +36,7 @@ import Pkg; Pkg.add(Pkg.PackageSpec(name="SciPy", rev="master"))
 ```jl
 using SciPy
 using PyPlot # Pkg.add("PyPlot")
+
 points1 = rand(15, 2)
 points2 = rand(15, 2)
 figure(figsize=(6, 6))
@@ -50,6 +51,7 @@ for i in 1:length(indexes)
     end
 end
 ```
+
 <img src="https://github.com/AtsushiSakai/SciPy.jl/raw/master/docs/src/assets/spatial_KDTree_sample.png" width="400">
 
 # Documentation
