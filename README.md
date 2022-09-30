@@ -31,6 +31,13 @@ If you want use latest development code:
 import Pkg; Pkg.add(Pkg.PackageSpec(name="SciPy", rev="master"))
 ```
 
+## What to do if installation failed?
+
+Read an error message you get carefully. Since SciPy.jl depends on [PyCall.jl](https://github.com/JuliaPy/PyCall.jl) to call Python functionalities from Julia, we also recommend to read [Specifying the Python version
+ section of PyCall.jl](https://github.com/JuliaPy/PyCall.jl#specifying-the-python-version).
+
+See also this [instruction_1](https://github.com/AtsushiSakai/SciPy.jl/issues/48#issuecomment-1263517899) and [instruction_2](https://github.com/AtsushiSakai/SciPy.jl/issues/48#issuecomment-1263519351) in [this issue](https://github.com/AtsushiSakai/SciPy.jl/issues/48)
+
 # Example
 
 ```jl
