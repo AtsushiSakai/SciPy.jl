@@ -25,7 +25,7 @@ using Pkg; Pkg.add("SciPy")
 
 and then just import it with `using SciPy`.
 
-If you want use latest development code:
+If you want to use latest development code:
 
 ```jl
 import Pkg; Pkg.add(Pkg.PackageSpec(name="SciPy", rev="master"))
