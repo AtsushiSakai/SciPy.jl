@@ -35,6 +35,7 @@ import Pkg; Pkg.add(Pkg.PackageSpec(name="SciPy", rev="master"))
 
 ```jl
 using SciPy
+using PyPlot # Pkg.add("PyPlot")
 points1 = rand(15, 2)
 points2 = rand(15, 2)
 figure(figsize=(6, 6))
