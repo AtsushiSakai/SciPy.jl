@@ -57,7 +57,7 @@ You can check latest documentation here:
 - [SciPy.jl Documentation](https://atsushisakai.github.io/SciPy.jl/stable)
 
 
-# Mainteners
+# Maintainers
 
 - [Atsushi Sakai](https://github.com/AtsushiSakai/) ([@Atsushi_twi](https://twitter.com/Atsushi_twi))
 - [Satoshi Terasaki](https://github.com/terasakisatoshi)([@GomahuAzarashi](https://twitter.com/MathSorcerer))
