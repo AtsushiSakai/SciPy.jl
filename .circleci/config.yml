@@ -11,6 +11,9 @@ jobs:
       - run:
           name: install git
           command: apt-get install -y git
+      - run:
+          name: install libstdc
+          command: apt-get install libstdc++6
       - checkout
       - run:
           name: install package
