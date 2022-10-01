@@ -10,7 +10,8 @@ jobs:
           command: apt-get update && apt-get install -y git
       - checkout
       - run:
-          name: install package (Workaround for scipy build issue: https://github.com/JuliaPy/PyCall.jl/issues/990#issuecomment-1224878410)
+          name: install package 
+          # Workaround for scipy build issue: https://github.com/JuliaPy/PyCall.jl/issues/990#issuecomment-1224878410
           command: julia --project=docs -e 'using Pkg; 
             Pkg.develop(PackageSpec(path=pwd())); 
             Pkg.instantiate(); 
