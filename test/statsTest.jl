@@ -8,9 +8,16 @@ end
 
 @testset "stats.describe" begin
     desc = stats.describe(collect(0:9))
-    @test desc == (nobs=10, minmax=(0, 9), mean=4.5, variance=9.166666666666666, skewness=0.0, kurtosis=-1.2242424242424244)
+    jlexpected = (nobs=10, minmax=(0, 9), mean=4.5, variance=9.166666666666666, skewness=0.0, kurtosis=-1.2242424242424244)
+    for (k, v) in pairs(desc)
+        @test all(v .≈ jlexpected[k])
+    end
+
     desc = pystats.describe(collect(0:9))
-    @test desc == (10, (0, 9), 4.5, 9.166666666666666, 0.0, -1.2242424242424244)
+    jlexpected = (10, (0, 9), 4.5, 9.166666666666666, 0.0, -1.2242424242424244)
+    zip(desc, jlexpected) do (v, e)
+        @test all(v .≈ e)
+    end
 end
 
 
