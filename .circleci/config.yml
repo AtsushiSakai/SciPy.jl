@@ -6,7 +6,7 @@ jobs:
       - image: julia:latest
     steps:
       - run:
-          name: install git
+          name: installing git
           command: apt-get update && apt-get install -y git
       - checkout
       - run:
