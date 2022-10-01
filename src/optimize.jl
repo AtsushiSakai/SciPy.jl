@@ -52,7 +52,7 @@ for f in all_properties
 end
 
 function __init__()
-    copy!(pyoptimize, pyimport_conda("scipy.stats", "scipy"))
+    copy!(pyoptimize, pyimport_conda("scipy.optimize", "scipy"))
 end
 
 
