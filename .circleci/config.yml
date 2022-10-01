@@ -7,7 +7,7 @@ jobs:
     steps:
       - run:
           name: add toolchain repo
-          command: sudo apt-get install software-properties-common && add-apt-repository ppa:ubuntu-toolchain-r/test
+          command: apt-get install software-properties-common && add-apt-repository ppa:ubuntu-toolchain-r/test
       - run:
           name: upgrade all
           command: apt-get update && apt-get upgrade && apt-get dist-upgrade
