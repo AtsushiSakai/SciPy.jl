@@ -9,17 +9,8 @@ jobs:
           name: upgrade all
           command: apt-get update && apt-get upgrade && apt-get dist-upgrade
       - run:
-          name: add toolchain repo
-          command: apt-get install -y software-properties-common && add-apt-repository -y ppa:ubuntu-toolchain-r/test
-      - run:
-          name: upgrade all
-          command: apt-get update
-      - run:
           name: install git
           command: apt-get install -y git
-      - run:
-          name: install libstdc
-          command: apt-get install libstdc++6
       - checkout
       - run:
           name: install package
@@ -28,6 +19,19 @@ jobs:
             Pkg.instantiate(); 
             Pkg.add("PyPlot");
             Pkg.add("Distributions");
+            #./deps/build.jl
+            ENV["PYTHON"] = "";
+            Pkg.add("Conda");
+            Pkg.add("PyCall");
+            Pkg.build("PyCall");
+            Pkg.build("Conda");
+            using PyCall;
+            using Conda;
+            ## Add the two packages we need
+            Conda.add("gcc=12.1.0"; channel="conda-forge");
+            Conda.add("scikit-image");
+            # Pin this version, to avoid clashes with libgcc.34
+            Conda.add("scipy=1.8.0");
             '
       - run:
           name: Build docs
