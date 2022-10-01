@@ -34,7 +34,7 @@ jobs:
           environment:
             CI: true
       - store_artifacts:
-          path: docs/build/html/
+          path: docs/build/
           destination: html
 
 workflows:
