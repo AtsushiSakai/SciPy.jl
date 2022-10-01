@@ -6,11 +6,8 @@ jobs:
       - image: julia:latest
     steps:
       - run:
-          name: upgrade all
-          command: apt-get update && apt-get upgrade && apt-get dist-upgrade
-      - run:
           name: install git
-          command: apt-get install -y git
+          command: apt-get update && apt-get install -y git
       - checkout
       - run:
           name: install package
@@ -19,6 +16,7 @@ jobs:
             Pkg.instantiate(); 
             Pkg.add("PyPlot");
             Pkg.add("Distributions");
+            # Workaround for scipy build issue: https://github.com/JuliaPy/PyCall.jl/issues/990#issuecomment-1224878410
             ENV["PYTHON"] = "";
             Pkg.add("Conda");
             Pkg.add("PyCall");
