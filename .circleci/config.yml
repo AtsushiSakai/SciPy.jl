@@ -5,17 +5,28 @@ jobs:
     docker:
       - image: julia:latest
     steps:
-      - checkout
       - run:
           name: install git
           command: apt-get update && apt-get install -y git
+      - checkout
       - run:
-          name: install package
+          name: install package 
+          # Workaround for scipy build issue: https://github.com/JuliaPy/PyCall.jl/issues/990#issuecomment-1224878410
           command: julia --project=docs -e 'using Pkg; 
             Pkg.develop(PackageSpec(path=pwd())); 
             Pkg.instantiate(); 
             Pkg.add("PyPlot");
             Pkg.add("Distributions");
+            ENV["PYTHON"] = "";
+            Pkg.add("Conda");
+            Pkg.add("PyCall");
+            Pkg.build("PyCall");
+            Pkg.build("Conda");
+            using PyCall;
+            using Conda;
+            Conda.add("gcc=12.1.0", channel="conda-forge");
+            Conda.add("scikit-image");
+            Conda.add("scipy=1.8.0");
             '
       - run:
           name: Build docs
