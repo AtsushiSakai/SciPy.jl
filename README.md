@@ -15,26 +15,35 @@ You can use many useful scientific functions of SciPy from Julia codes.
 
 # Requirements
 
-Julia 1.0 or higher.
+Julia 1.6 or higher.
 
 # Install
 
 ```jl
-using Pkg;Pkg.add("SciPy")
+using Pkg; Pkg.add("SciPy")
 ```
 
 and then just import it with `using SciPy`.
 
-If you want use latest development code:
+If you want to use latest development code:
 
 ```jl
 import Pkg; Pkg.add(Pkg.PackageSpec(name="SciPy", rev="master"))
 ```
 
+## What to do if installation failed?
+
+Read an error message you get carefully. Since SciPy.jl depends on [PyCall.jl](https://github.com/JuliaPy/PyCall.jl) to call Python functionalities from Julia, we also recommend to read [Specifying the Python version
+ section of PyCall.jl](https://github.com/JuliaPy/PyCall.jl#specifying-the-python-version).
+
+See also this [instruction_1](https://github.com/AtsushiSakai/SciPy.jl/issues/48#issuecomment-1263517899) and [instruction_2](https://github.com/AtsushiSakai/SciPy.jl/issues/48#issuecomment-1263519351) in [this issue](https://github.com/AtsushiSakai/SciPy.jl/issues/48)
+
 # Example
 
 ```jl
 using SciPy
+using PyPlot # Pkg.add("PyPlot")
+
 points1 = rand(15, 2)
 points2 = rand(15, 2)
 figure(figsize=(6, 6))
@@ -49,6 +58,7 @@ for i in 1:length(indexes)
     end
 end
 ```
+
 <img src="https://github.com/AtsushiSakai/SciPy.jl/raw/master/docs/src/assets/spatial_KDTree_sample.png" width="400">
 
 # Documentation
