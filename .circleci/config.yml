@@ -12,9 +12,6 @@ jobs:
           name: add toolchain repo
           command: apt-get install -y software-properties-common && add-apt-repository -y ppa:ubuntu-toolchain-r/test
       - run:
-          name: upgrade all
-          command: apt-get update && apt-get upgrade && apt-get dist-upgrade
-      - run:
           name: install git
           command: apt-get install -y git
       - run:
