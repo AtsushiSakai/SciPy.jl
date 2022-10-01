@@ -6,8 +6,11 @@ jobs:
       - image: julia:latest
     steps:
       - run:
-          name: installing git
-          command: apt-get update && apt-get install -y git
+          name: upgrade all
+          command: apt-get update && apt-get upgrade && apt-get dist-upgrade
+      - run:
+          name: install git
+          command: apt-get install -y git
       - checkout
       - run:
           name: install package
