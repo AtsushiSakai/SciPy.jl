@@ -26,7 +26,7 @@ jobs:
             Pkg.build("Conda");
             using PyCall;
             using Conda;
-            Conda.add("gcc=12.1.0"; channel="conda-forge");
+            Conda.add("gcc=12.1.0", channel="conda-forge");
             Conda.add("scikit-image");
             Conda.add("scipy=1.8.0");
             '
