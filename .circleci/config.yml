@@ -19,7 +19,6 @@ jobs:
             Pkg.instantiate(); 
             Pkg.add("PyPlot");
             Pkg.add("Distributions");
-            #./deps/build.jl
             ENV["PYTHON"] = "";
             Pkg.add("Conda");
             Pkg.add("PyCall");
@@ -27,10 +26,8 @@ jobs:
             Pkg.build("Conda");
             using PyCall;
             using Conda;
-            ## Add the two packages we need
             Conda.add("gcc=12.1.0"; channel="conda-forge");
             Conda.add("scikit-image");
-            # Pin this version, to avoid clashes with libgcc.34
             Conda.add("scipy=1.8.0");
             '
       - run:
