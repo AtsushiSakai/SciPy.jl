@@ -9,8 +9,8 @@ jobs:
     strategy:
       matrix:
         version:
-          - '1.0' # Minimum
-          - '1.6' # Latest
+          - '1.6' # LTS
+          - '1.8' # Latest
           - 'nightly'
         os:
           - ubuntu-latest
