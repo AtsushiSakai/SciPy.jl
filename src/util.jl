@@ -2,7 +2,7 @@
 import PyCall: hasproperty # Base.hasproperty only in Julia 1.2
 
 struct LazyHelp
-    o
+    o::Any
     keys::Tuple{Vararg{String}}
     LazyHelp(o) = new(o, ())
     LazyHelp(o, k::AbstractString) = new(o, (k,))
@@ -43,6 +43,3 @@ function _generate_docstring(f)
     $(fdoc)
     """
 end
-
-
-

@@ -26,9 +26,16 @@ import ..LazyHelp
 
 const _ignore_funcs = ["stats", "describe"]
 
-@doc LazyHelp(pystats, "describe") function describe(args...; kws...) 
-   desc = pycall(pystats.describe, PyAny, args...; kws...)
-   return (nobs=desc[1], minmax=desc[2], mean=desc[3], variance=desc[4], skewness=desc[5], kurtosis=desc[6])
+@doc LazyHelp(pystats, "describe") function describe(args...; kws...)
+    desc = pycall(pystats.describe, PyAny, args...; kws...)
+    return (
+        nobs = desc[1],
+        minmax = desc[2],
+        mean = desc[3],
+        variance = desc[4],
+        skewness = desc[5],
+        kurtosis = desc[6],
+    )
 end
 
 @pyinclude(joinpath(pkgdir(@__MODULE__), "src", "scipy_api_list.py"))
@@ -40,7 +47,8 @@ for f in all_properties
     f in _ignore_funcs && continue
 
     sf = Symbol(f)
-    @eval @doc LazyHelp(pystats, $f) $sf(args...; kws...) = pycall(pystats.$f, PyAny, args...; kws...)
+    @eval @doc LazyHelp(pystats, $f) $sf(args...; kws...) =
+        pycall(pystats.$f, PyAny, args...; kws...)
 end
 
 function __init__()

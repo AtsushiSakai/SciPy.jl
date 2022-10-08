@@ -43,7 +43,8 @@ for f in all_properties
     f in _ignore_funcs && continue
 
     sf = Symbol(f)
-    @eval @doc LazyHelp(pyoptimize, $f) $sf(args...; kws...) = pycall(pyoptimize.$f, PyAny, args...; kws...)
+    @eval @doc LazyHelp(pyoptimize, $f) $sf(args...; kws...) =
+        pycall(pyoptimize.$f, PyAny, args...; kws...)
 end
 
 function __init__()

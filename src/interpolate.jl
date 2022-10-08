@@ -36,7 +36,8 @@ for f in all_properties
     f in _ignore_funcs && continue
 
     sf = Symbol(f)
-    @eval @doc LazyHelp(pyinterpolate, $f) $sf(args...; kws...) = pycall(pyinterpolate.$f, PyAny, args...; kws...)
+    @eval @doc LazyHelp(pyinterpolate, $f) $sf(args...; kws...) =
+        pycall(pyinterpolate.$f, PyAny, args...; kws...)
 end
 
 function __init__()
