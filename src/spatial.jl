@@ -41,6 +41,7 @@ import ..LazyHelp
 
 const _ignore_funcs = ["spatial"]
 
+pyimport_conda("scipy", "scipy")
 @pyinclude(joinpath(pkgdir(@__MODULE__), "src", "scipy_api_list.py"))
 apis = py"generate_scipy_apis"("spatial")
 

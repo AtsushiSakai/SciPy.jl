@@ -38,6 +38,7 @@ const _ignore_funcs = ["stats", "describe"]
     )
 end
 
+pyimport_conda("scipy", "scipy")
 @pyinclude(joinpath(pkgdir(@__MODULE__), "src", "scipy_api_list.py"))
 apis = py"generate_scipy_apis"("stats")
 

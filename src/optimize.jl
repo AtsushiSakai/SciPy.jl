@@ -28,6 +28,7 @@ module optimize
 
 using PyCall
 
+pyimport_conda("scipy", "scipy")
 @pyinclude(joinpath(pkgdir(@__MODULE__), "src", "scipy_api_list.py"))
 apis = py"generate_scipy_apis"("optimize")
 
