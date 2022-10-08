@@ -35,10 +35,8 @@ julia> r.as_euler("zyx", degrees=true)
 module spatial
 
 using PyCall
-import PyCall: hasproperty # Base.hasproperty in Julia 1.2
 
 import ..pyspatial
-import .._generate_docstring
 import ..LazyHelp
 
 const _ignore_funcs = ["spatial"]

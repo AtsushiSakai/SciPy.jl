@@ -20,10 +20,8 @@ julia> SciPy.stats.pearsonr(a, b)
 module stats
 
 using PyCall
-import PyCall: hasproperty # Base.hasproperty in Julia 1.2
 
 import ..pystats
-import .._generate_docstring
 import ..LazyHelp
 
 const _ignore_funcs = ["stats", "describe"]

@@ -21,10 +21,8 @@ julia> f(0.5)
 module interpolate
 
 using PyCall
-import PyCall: hasproperty # Base.hasproperty in Julia 1.2
 
 import ..pyinterpolate
-import .._generate_docstring
 import ..LazyHelp
 
 const _ignore_funcs = ["interpolate"]

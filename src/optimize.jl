@@ -27,7 +27,6 @@ Dict{Any,Any} with 8 entries:
 module optimize
 
 using PyCall
-import PyCall: hasproperty # Base.hasproperty in Julia 1.2
 
 @pyinclude(joinpath(pkgdir(@__MODULE__), "src", "scipy_api_list.py"))
 type2props = py"generate_scipy_apis"("optimize")
@@ -35,7 +34,7 @@ type2props = py"generate_scipy_apis"("optimize")
 all_properties = [type2props["function"]; type2props["class"]]
 
 import ..pyoptimize
-import .._generate_docstring
+
 import ..LazyHelp
 
 const _ignore_funcs = ["optimize"]
