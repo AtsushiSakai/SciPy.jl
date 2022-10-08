@@ -29,9 +29,9 @@ module optimize
 using PyCall
 
 @pyinclude(joinpath(pkgdir(@__MODULE__), "src", "scipy_api_list.py"))
-type2props = py"generate_scipy_apis"("optimize")
+apis = py"generate_scipy_apis"("optimize")
 
-all_properties = [type2props["function"]; type2props["class"]]
+all_properties = [apis["function"]; apis["class"]]
 
 import ..pyoptimize
 
@@ -40,15 +40,15 @@ import ..LazyHelp
 const _ignore_funcs = ["optimize"]
 
 for f in all_properties
-    f in _ignore_funcs && continue
+  f in _ignore_funcs && continue
 
-    sf = Symbol(f)
-    @eval @doc LazyHelp(pyoptimize, $f) $sf(args...; kws...) =
-        pycall(pyoptimize.$f, PyAny, args...; kws...)
+  sf = Symbol(f)
+  @eval @doc LazyHelp(pyoptimize, $f) $sf(args...; kws...) =
+    pycall(pyoptimize.$f, PyAny, args...; kws...)
 end
 
 function __init__()
-    copy!(pyoptimize, pyimport_conda("scipy.optimize", "scipy"))
+  copy!(pyoptimize, pyimport_conda("scipy.optimize", "scipy"))
 end
 
 
