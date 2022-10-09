@@ -21,6 +21,7 @@ using Test
 
     @testset "constants" begin
         @test constants.golden == 1.618033988749895
+        @test typeof(pyconstants.golden) == typeof(constants.golden)
     end
 
     @testset "fft" begin
