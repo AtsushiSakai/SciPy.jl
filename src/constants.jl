@@ -51,7 +51,7 @@ function __init__()
     for f in apis["constant"]
         f in _ignore_funcs && continue # just in case
         sf = Symbol(f)
-        @eval @doc LazyHelp(pyconstants, $f) const $sf = getproperty(pyconstants, Symbol($f))
+        @eval @doc LazyHelp(pyconstants, $f) const $sf = convert(PyAny, getproperty(pyconstants, $f))
     end
 end
 
