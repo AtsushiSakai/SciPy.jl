@@ -97,8 +97,8 @@ julia> SciPy.constants.convert_temperature([-40, 40.0], "Celsius", "Kelvin")
 
 ```
 """
-const constants = PyNULL()
 const pyconstants = PyNULL()
+include("constants.jl")
 
 """
 scipy.fft module
@@ -327,7 +327,6 @@ Module initialization function
 function __init__()
     copy!(scipy, pyimport_conda("scipy", "scipy"))
     copy!(cluster, pyimport_conda("scipy.cluster", "scipy"))
-    copy!(constants, pyimport_conda("scipy.constants", "scipy"))
     copy!(fft, pyimport_conda("scipy.fft", "scipy"))
     copy!(integrate, pyimport_conda("scipy.integrate", "scipy"))
     copy!(io, pyimport_conda("scipy.io", "scipy"))
