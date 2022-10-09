@@ -56,11 +56,15 @@ def generate_scipy_apis(pymod) -> dict:
     d = defaultdict(list)
     attributes = sorted(set(pymod.__all__))
     for attr in attributes:
+        is_const = True
         for (key, method) in types:
             condition = eval(f"inspect.{method}(pymod.{attr})")
             if condition:
                 d[key].append(attr)
+                is_const = False
                 break
+        if is_const:
+            d["constant"].append(attr)
 
     return dict(d)
 
