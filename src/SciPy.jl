@@ -15,7 +15,7 @@ export print_configulations
 export cluster, constants, fft, integrate, interpolate, io, linalg, ndimage, odr
 export optimize, signal, sparse, spatial, stats, special
 # raw PyObject modules
-export pystats, pyoptimize, pyinterpolate, pyspatial
+export pyconstants, pystats, pyoptimize, pyinterpolate, pyspatial
 
 
 const scipy = PyNULL()
@@ -98,6 +98,7 @@ julia> SciPy.constants.convert_temperature([-40, 40.0], "Celsius", "Kelvin")
 ```
 """
 const constants = PyNULL()
+const pyconstants = PyNULL()
 
 """
 scipy.fft module
@@ -341,6 +342,7 @@ function __init__()
     copy!(pystats, pyimport_conda("scipy.stats", "scipy"))
     copy!(pyoptimize, pyimport_conda("scipy.optimize", "scipy"))
     copy!(pyinterpolate, pyimport_conda("scipy.interpolate", "scipy"))
+    copy!(pyconstants, pyimport_conda("scipy.constants", "scipy"))
 end
 
 """
