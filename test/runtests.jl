@@ -22,6 +22,11 @@ using Test
     @testset "constants" begin
         @test constants.golden == 1.618033988749895
         @test typeof(pyconstants.golden) == typeof(constants.golden)
+
+        @test constants.convert_temperature([-40, 40.0], "Celsius", "Kelvin") ≈ [233.14999999999998, 313.15]
+
+        @test typeof(pyconstants.physical_constants) == typeof(constants.physical_constants)
+        @test constants.physical_constants["electron mass"] == (9.1093837015e-31, "kg", 2.8e-40)
     end
 
     @testset "fft" begin
