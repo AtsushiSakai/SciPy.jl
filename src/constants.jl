@@ -29,7 +29,7 @@ pyimport_conda("scipy", "scipy")
 @pyinclude(joinpath(pkgdir(@__MODULE__), "src", "scipy_api_list.py"))
 apis = py"generate_scipy_apis"("constants")
 
-all_properties = [apis["function"]; apis["class"]; apis["constant"]]
+all_properties = [apis["function"]; apis["class"]]
 
 import ..pyconstants
 
@@ -56,27 +56,17 @@ function __init__()
     const centi = 0.01
 
     =#
-    for f in apis["constant"]
+    for f in pyconstants.__all__ |> unique |> sort
         f in _ignore_funcs && continue # just in case
-        sf = Symbol(f)
-        #=
-        Note that `typeof(getproperty(pyconstants, $f))` is `PyObject` not a Julia's native type. For example we have
-        ```julia-repl
-        julia> getproperty(pyconstants, "golden")
-        PyObject 1.618033988749895
-
-        julia> getproperty(pyconstants, "golden") |> typeof
-        PyCall.PyObject
-        ````
-        We also need apply `convert(PyAny, ...)` to treat the R.H.S of expression
-        in the metaprogramming loop as Julia object, which should hold
-
-        ```julia-repl
-        julia> typeof(pyconstants.golden) == typeof(constants.golden)
-        true
-        ```
-        =#
-        @eval @doc LazyHelp(pyconstants, $f) const $sf = convert(PyAny, getproperty(pyconstants, $f))
+        a = pybuiltin("getattr")(pyconstants, f)
+        if a isa PyObject
+            # The variable `a` should be python function, class or module
+            continue
+        else
+            # The variable `a` is converted in a Julia's native type. We assume this is a constant value.
+            sf = Symbol(f)
+            @eval @doc LazyHelp(pyconstants, $f) const $sf = $a
+        end
     end
 end
 
