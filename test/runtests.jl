@@ -20,8 +20,13 @@ using Test
     end
 
     @testset "constants" begin
+        @test constants.zero_Celsius == 273.15
         @test constants.golden == 1.618033988749895
+        @test constants.centi == 0.01
+
+        @test typeof(pyconstants.zero_Celsius) == typeof(constants.zero_Celsius)
         @test typeof(pyconstants.golden) == typeof(constants.golden)
+        @test typeof(pyconstants.centi) == typeof(constants.centi)
 
         @test constants.convert_temperature([-40, 40.0], "Celsius", "Kelvin") ≈ [233.14999999999998, 313.15]
 
