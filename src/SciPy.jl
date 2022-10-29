@@ -15,7 +15,7 @@ export print_configulations
 export cluster, constants, fft, integrate, interpolate, io, linalg, ndimage, odr
 export optimize, signal, sparse, spatial, stats, special
 # raw PyObject modules
-export pystats, pyoptimize, pyinterpolate, pyspatial
+export pyconstants, pystats, pyoptimize, pyinterpolate, pyspatial
 
 
 const scipy = PyNULL()
@@ -73,31 +73,8 @@ julia> SciPy.cluster.vq.kmeans(whitened, [whitened[1,:] whitened[3,:]] )
 """
 const cluster = PyNULL()
 
-"""
-scipy.constants module
-
-- [Constants (scipy.constants) Reference Guide](https://docs.scipy.org/doc/scipy/reference/constants.html)
-
-# Examples
-
-You can access each constants:
-
-```julia-repl
-julia> SciPy.constants.golden
-1.618033988749895
-
-julia> SciPy.constants.physical_constants["electron mass"] 
-(9.10938356e-31, "kg", 1.1e-38)
-
-julia> SciPy.constants.convert_temperature([-40, 40.0], "Celsius", "Kelvin") 
-
-2-element Array{Float64,1}:
- 233.14999999999998
- 313.15
-
-```
-"""
-const constants = PyNULL()
+const pyconstants = PyNULL()
+include("constants.jl")
 
 """
 scipy.fft module
@@ -326,7 +303,6 @@ Module initialization function
 function __init__()
     copy!(scipy, pyimport_conda("scipy", "scipy"))
     copy!(cluster, pyimport_conda("scipy.cluster", "scipy"))
-    copy!(constants, pyimport_conda("scipy.constants", "scipy"))
     copy!(fft, pyimport_conda("scipy.fft", "scipy"))
     copy!(integrate, pyimport_conda("scipy.integrate", "scipy"))
     copy!(io, pyimport_conda("scipy.io", "scipy"))
@@ -341,6 +317,7 @@ function __init__()
     copy!(pystats, pyimport_conda("scipy.stats", "scipy"))
     copy!(pyoptimize, pyimport_conda("scipy.optimize", "scipy"))
     copy!(pyinterpolate, pyimport_conda("scipy.interpolate", "scipy"))
+    copy!(pyconstants, pyimport_conda("scipy.constants", "scipy"))
 end
 
 """
