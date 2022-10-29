@@ -64,7 +64,6 @@ def generate_scipy_apis(pymod) -> dict:
                 is_const = False
                 break
         if is_const:
-            # required to setup `constants` module
             d["constant"].append(attr)
 
     return dict(d)
