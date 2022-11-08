@@ -1,6 +1,6 @@
 import PyCall
 
-if PyCall.conda
+if Sys.islinux() && PyCall.conda
     #=
     If one uses Python managed by Conda.jl, pin scipy version to avoid an error
     "version `GLIBCXX_3.4.30' not found". See the following issues:
