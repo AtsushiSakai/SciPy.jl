@@ -13,13 +13,14 @@ jobs:
     strategy:
       matrix:
         version:
-          - '1.6' # LTS
-          - '1.8' # Current Stable Release
-          - 'nightly'
+          - "1.6" # LTS
+          - "1.8" # Current Stable Release
+          - "nightly"
         os:
           - ubuntu-latest
         arch:
           - x64
+        use_miniforge: [yes]
     steps:
       - uses: actions/checkout@v2
       - uses: julia-actions/setup-julia@v1
@@ -36,5 +37,9 @@ jobs:
             ${{ runner.os }}-test-${{ env.cache-name }}-
             ${{ runner.os }}-test-
             ${{ runner.os }}-
-      - uses: julia-actions/julia-buildpkg@latest
-      - uses: julia-actions/julia-runtest@latest
+      - uses: julia-actions/julia-buildpkg@v1
+        env:
+          CONDA_JL_USE_MINIFORGE: ${{ matrix.use_miniforge }}
+      - uses: julia-actions/julia-runtest@v1
+        env:
+          CONDA_JL_USE_MINIFORGE: ${{ matrix.use_miniforge }}
