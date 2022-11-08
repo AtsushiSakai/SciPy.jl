@@ -2,8 +2,8 @@ using SciPy
 using Test
 
 @testset "SciPy.jl" begin
-    # Print configulations before start testings.
-    print_configulations()
+    # Print configurations before start testings.
+    print_configurations()
 
     @testset "cluster" begin
         features  = [[ 1.9  2.3];
