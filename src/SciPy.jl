@@ -343,4 +343,7 @@ function print_configurations()
     return nothing
 end
 
+# TODO: remove this when SciPy.jl v0.2.0 is released
+Base.@deprecate print_configulations() print_configurations()
+
 end
