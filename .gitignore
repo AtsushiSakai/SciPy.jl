@@ -4,3 +4,4 @@ Manifest.toml
 *.pptx
 .idea
 .ipynb_checkpoints
+__pycache__/
