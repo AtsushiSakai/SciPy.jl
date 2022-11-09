@@ -11,7 +11,7 @@ module SciPy
 using PyCall
 using InteractiveUtils
 
-export print_configulations
+export print_configurations
 export cluster, constants, fft, integrate, interpolate, io, linalg, ndimage, odr
 export optimize, signal, sparse, spatial, stats, special
 # raw PyObject modules
@@ -321,14 +321,14 @@ function __init__()
 end
 
 """
-Print configulations:
+Print configurations:
 - Julia version
 - Python version
 - Python path
 - scipy version
 """
-function print_configulations()
-    println("==== SciPy.jl configulations ====")
+function print_configurations()
+    println("==== SciPy.jl configurations ====")
     println("-- Julia settings --")
     versioninfo()
     println("-- PyCall.jl settings --")
@@ -342,5 +342,8 @@ function print_configulations()
     @show scipy.version.git_revision
     return nothing
 end
+
+# TODO: remove this when we release SciPy.jl v0.2.0
+Base.@deprecate print_configulations() print_configurations()
 
 end

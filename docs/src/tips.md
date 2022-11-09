@@ -12,12 +12,12 @@ help?> SciPy.stats.gmean
     ...
 ```
 
-## Print configulations
+## Print configurations
 
-You can check dependency configulations of SciPy using [`print_configulations()`](@ref).
+You can check dependency configurations of SciPy using [`print_configurations()`](@ref).
 
 ```julia-repl
-julia> print_configulations();
+julia> print_configurations();
 -- Julia settings --
 Julia Version 1.6.0
 Commit f9720dc2eb (2021-03-24 12:55 UTC)
