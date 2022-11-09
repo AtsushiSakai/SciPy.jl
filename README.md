@@ -9,7 +9,7 @@
 
 <p align="center"><img src="docs/src/assets/scipyjl_logo.png" alt="drawing" width="200"/></p>
 
-[SciPy.jl](https://pkg.juliahub.com/ui/Packages/SciPy/g8Zlq/) is a Julia interface for [SciPy](https://www.scipy.org/scipylib/index.html) using [PyCall.jl](https://github.com/JuliaPy/PyCall.jl).
+[SciPy.jl](https://pkg.juliahub.com/ui/Packages/SciPy/g8Zlq/) is a Julia interface for [SciPy](https://scipy.org/) using [PyCall.jl](https://github.com/JuliaPy/PyCall.jl).
 
 You can use many useful scientific functions of SciPy from Julia codes.
 
