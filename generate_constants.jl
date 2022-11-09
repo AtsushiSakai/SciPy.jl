@@ -1,3 +1,4 @@
+import SciPy
 using SciPy.PyCall
 const _ignore_funcs = ["constants"]
 
