@@ -6,7 +6,7 @@ scipy.spetial module
 
 ## airy
 
-[scipy\.special\.airy Reference Guide](http://scipy.github.io/devdocs/generated/scipy.special.airy.html#scipy.special.airy)
+[scipy\.special\.airy Reference Guide](https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.airy.html#scipy-special-airy)
 
 
 ```@example

@@ -16,11 +16,11 @@ You can know which kind of functions are available in the [SciPy Reference Guide
 
 # Requirements
 
-Julia 1.0 or higher.
+Julia 1.6 or higher.
 
 # Install
 
-The package is tested against, and being developed for, Julia 1.4 and above on Linux, macOS, and Windows.
+The package is tested against, and being developed for, Julia 1.6 and above on Linux, macOS, and Windows.
 
 You can install this package with:
 
