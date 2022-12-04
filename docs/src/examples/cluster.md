@@ -7,7 +7,7 @@ scipy.cluster module
 
 ## vq.kmeans
 
-- [scipy\.cluster\.vq\.kmeans Reference Guide](http://scipy.github.io/devdocs/generated/scipy.cluster.vq.kmeans.html#scipy.cluster.vq.kmeans)
+- [scipy\.cluster\.vq\.kmeans Reference Guide](https://docs.scipy.org/doc/scipy/reference/generated/scipy.cluster.vq.kmeans.html#scipy-cluster-vq-kmeans)
 
 ```@example
 using SciPy # hide
